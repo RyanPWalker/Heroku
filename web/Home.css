@@ -1,0 +1,52 @@
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr {
+	background-color: #696969;
+}
+body {
+	background-color: black;
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/bc/f1/5b/bcf15b9de41c6eea24d2562c2e532095.jpg");
+	background-repeat: no-repeat;
+	text-align: right;
+	border-style: none;
+}
+h1 {
+	color: #696969;
+	font-family: verdana;
+}
+p  {
+	color: #696969;
+	font-family: verdana;
+}
+.button {
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.pulse:hover, 
+.pulse:focus {
+	animation: pulse 1s;
+	box-shadow: 0 0 2em 1.1em rgb(26, 26, 26);
+	/* Not sure how to get shadow to cover right button */
+	z-index: 2;
+}
+
+@keyframes pulse {
+	0% { box-shadow: 0 0 0 0 var(--hover); }
+}
