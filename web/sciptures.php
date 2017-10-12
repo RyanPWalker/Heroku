@@ -46,19 +46,17 @@
 		
 		h1 {
 			color: rgb(0,100,200);
-			font-size: 100px;
+			font-size: 50px;
 			font-family: Menlo, Monaco, fixed-width;
 			height: 100%;
 			width: 100%;
-			display: flex;
-			position: fixed;
-			align-items: center;
-			justify-content: center;
 		}
 	</style>
 </head>
 <body>
 	<h1>Here are the database results:</h1>
+
+	<input type="text" name="book" action="getScriptures.php">
 
 	<?php
 		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
