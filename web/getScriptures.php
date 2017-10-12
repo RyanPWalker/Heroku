@@ -62,8 +62,8 @@
 	</form>
 
 	<?php
-	echo $_POST[book];
-	$statement = $db->prepare("SELECT * FROM scriptures WHERE book = $_POST[book]");
+		echo $_POST[book];
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE scriptures.book = $_POST['book']");
 		$statement->execute();
 		echo "Made it this far";
 		// Go through each result
