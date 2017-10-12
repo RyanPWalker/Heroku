@@ -56,7 +56,10 @@
 <body>
 	<h1>Here are the database results:</h1>
 
-	<input type="text" name="book" action="getScriptures.php">
+	<form action="getScriptures.php">
+			<input type="text" name="book">
+			<button>Submit</button>
+	</form>
 
 	<?php
 		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
