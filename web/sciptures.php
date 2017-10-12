@@ -56,9 +56,9 @@
 <body>
 	<h1>Here are the database results:</h1>
 
-	<form action="getScriptures.php">
+	<form action="getScriptures.php" method="post">
 			<input type="text" name="book">
-			<button>Submit</button>
+			<input type="submit" value="Search!" name="whateveryouwant">
 	</form>
 
 	<?php
