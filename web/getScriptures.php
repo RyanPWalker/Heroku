@@ -26,7 +26,7 @@
 	<?php
 		$showBook = $_POST[book];
 		echo $showBook;
-		$statement = $db->prepare("SELECT content FROM scriptures WHERE scriptures.book = $showBook");
+		$statement = $db->prepare("SELECT content FROM scriptures");
 		$statement->execute();
 		echo "Made it this far";
 		// Go through each result
