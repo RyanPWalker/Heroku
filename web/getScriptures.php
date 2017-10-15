@@ -57,17 +57,20 @@ $db = NULL;
 <body>
 	<h1>Here are the database results:</h1>
 
-	<form action="getScriptures.php">
+	<form action="getScriptures.php" method="post">
 			<input type="text" name="book">
-			<button>Submit</button>
+			<input type="submit" value="Search!" name="whateveryouwant">
 	</form>
 
 	<?php
 		$searchBook = $_POST[book];
+
+		// This allows users to search without 
+		// having to capitalize the first letter
 		$searchArray = str_split($searchBook);
 		$searchArray[0] = '_';
 		$searchArray = implode("", $searchArray);
-		echo $searchArray;
+		
 		// Storing the database into a session doesn't seem to work.
 		//$db = $_SESSION["database"];
 		$statement = $db->prepare("SELECT * FROM scriptures WHERE book LIKE'" . $searchArray . "'");
