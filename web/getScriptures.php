@@ -66,7 +66,7 @@ $db = NULL;
 		$showBook = $_POST[book];
 		//$db = $_SESSION["database"];
 		echo $showBook;
-		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
+		$statement = $db->prepare("SELECT * content FROM scriptures");
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
