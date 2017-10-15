@@ -30,7 +30,7 @@ session_start();
 		$showBook = $_POST[book];
 		$db = $_SESSION["database"];
 		echo $showBook;
-		$statement = $db->prepare("SELECT * FROM scriptures WHERE book = $showBook");
+		$statement = $db->prepare("SELECT * FROM scriptures");
 		$statement->execute();
 		echo "Made it this far";
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
