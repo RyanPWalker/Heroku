@@ -66,7 +66,7 @@ $db = NULL;
 		$searchBook = $_POST[book];
 		//$db = $_SESSION["database"];
 		echo $searchBook;
-		$statement = $db->prepare("SELECT * FROM scriptures WHERE book IS $searchBook");
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE book = " . $searchBook);
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
