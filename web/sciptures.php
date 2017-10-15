@@ -55,8 +55,9 @@
 		// Storing the database into a session doesn't seem to work.
 		//$db = $_SESSION["database"];
 		$statement = $db->prepare("SELECT * FROM scriptures WHERE book LIKE'" . $searchArray . "'");
-		if ($searchBook = 'ALL')
+		if ($searchBook = 'ALL') {
 			$statement = $db->prepare("SELECT * FROM scriptures");
+		}
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
