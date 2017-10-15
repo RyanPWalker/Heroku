@@ -63,10 +63,10 @@ $db = NULL;
 	</form>
 
 	<?php
-		$showBook = $_POST[book];
+		$searchBook = $_POST[book];
 		//$db = $_SESSION["database"];
-		echo $showBook;
-		$statement = $db->prepare("SELECT * FROM scriptures");
+		echo $searchBook;
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE book = $searchBook");
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
