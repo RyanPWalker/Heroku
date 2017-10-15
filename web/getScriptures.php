@@ -66,10 +66,11 @@ $db = NULL;
 		$searchBook = $_POST[book];
 		$searchArray = str_split($searchBook);
 		$searchArray[0] = '_';
+		$searchArray = implode("", $searchArray);
 		echo $searchArray;
 		// Storing the database into a session doesn't seem to work.
 		//$db = $_SESSION["database"];
-		$statement = $db->prepare("SELECT * FROM scriptures WHERE book LIKE'" . $searchBook . "'");
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE book LIKE'" . $searchArray . "'");
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
