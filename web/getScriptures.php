@@ -28,8 +28,8 @@ session_start();
 
 	<?php
 		$showBook = $_POST[book];
+		$db = $_SESSION["database"];
 		echo $showBook;
-		echo "Favorite color is " . $_SESSION["favcolor"];
 		$statement = $db->prepare("SELECT * FROM scriptures WHERE book = $showBook");
 		$statement->execute();
 		echo "Made it this far";

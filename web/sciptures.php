@@ -63,7 +63,7 @@
 	</form>
 
 	<?php
-	$_SESSION["favcolor"] = "green";
+		$_SESSION["database"] = db;
 		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
 		$statement->execute();
 		// Go through each result
