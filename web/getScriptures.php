@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <head>
 	<title>Scriptures Resources!</title>
@@ -26,10 +29,10 @@
 	<?php
 		$showBook = $_POST[book];
 		echo $showBook;
-		$statement = $db->prepare("SELECT content FROM scriptures");
+		echo "Favorite color is " . $_SESSION["favcolor"];
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE book = $showBook");
 		$statement->execute();
 		echo "Made it this far";
-		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 		{
 			echo '<p>';
@@ -37,7 +40,7 @@
 			echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
 			echo '</p>';
 		}
-?>
+	?>
 
 </body>
 </html>

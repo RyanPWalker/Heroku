@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$db = NULL;
 	try {
 		// default Heroku Postgres configuration URL
@@ -62,6 +63,7 @@
 	</form>
 
 	<?php
+	$_SESSION["favcolor"] = "green";
 		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
 		$statement->execute();
 		// Go through each result
