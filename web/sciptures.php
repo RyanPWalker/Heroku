@@ -2,37 +2,18 @@
 	session_start();
 	$db = NULL;
 	try {
-		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
-		if (!isset($dbUrl) || empty($dbUrl)) {
-			// example localhost configuration URL with user: "ta_user", password: "ta_pass"
-			// and a database called "scripture_ta"
-			$dbUrl = "postgres://ta_user:ta_pass@localhost:5432/scripture_ta";
-			// NOTE: It is not great to put this sensitive information right
-			// here in a file that gets committed to version control. It's not
-			// as bad as putting your Heroku user and password here, but still
-			// not ideal.
-			
-			// It would be better to put your local connection information
-			// into an environment variable on your local computer. That way
-			// it would work consistently regardless of whether the application
-			// were running locally or at heroku.
 		}
-		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
 		$dbHost = $dbopts["host"];
 		$dbPort = $dbopts["port"];
 		$dbUser = $dbopts["user"];
 		$dbPassword = $dbopts["pass"];
 		$dbName = ltrim($dbopts["path"],'/');
-		// Create the PDO connection
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-		// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
 	catch (PDOException $ex) {
-		// If this were in production, you would not want to echo
-		// the details of the exception.
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}
@@ -57,14 +38,25 @@
 <body>
 	<h1>Here are the database results:</h1>
 
-	<form action="getScriptures.php" method="post">
+	<form action="sciptures.php" method="post">
 			<input type="text" name="book">
 			<input type="submit" value="Search!" name="whateveryouwant">
 	</form>
 
 	<?php
-		$_SESSION["database"] = db;
-		$statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
+		$searchBook = $_POST[book];
+
+		// This allows users to search without 
+		// having to capitalize the first letter
+		$searchArray = str_split($searchBook);
+		$searchArray[0] = '_';
+		$searchArray = implode("", $searchArray);
+		
+		// Storing the database into a session doesn't seem to work.
+		//$db = $_SESSION["database"];
+		$statement = $db->prepare("SELECT * FROM scriptures WHERE book LIKE'" . $searchArray . "'");
+		if ($searchBook = 'ALL')
+			$statement = $db->prepare("SELECT * FROM scriptures");
 		$statement->execute();
 		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
