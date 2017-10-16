@@ -43,13 +43,16 @@
 </head>
 <body>
 	<div class="container">
-	<h1>Here are the database results:</h1>
+	<h1>Search your favorite scriptures:</h1>
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<form action="scriptures.php" method="post">
+				<input type="text" name="book">
+				<input type="submit" value="Search!" name="whateveryouwant">
+			</form>
+		</div>
 
-	<form action="scriptures.php" method="post">
-			<input type="text" name="book">
-			<input type="submit" value="Search!" name="whateveryouwant">
-	</form>
-
+	<div class="panel-body">
 	<?php
 		if ($_POST[book] != NULL) {
 			$_SESSION["book"] = $_POST[book];
@@ -80,6 +83,8 @@
 		}
 	?>
 	</div>
+</div>
+</div>
 
 </body>
 </html>
