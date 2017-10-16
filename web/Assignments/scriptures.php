@@ -68,7 +68,7 @@
 			// row, and we can access the different values based on their
 			// name
 			echo '<p>';
-			echo '<strong><a href="scriptures.php" method="post">' . $row['book'] . '</a> ' . $row['chapter'] . ':';
+			echo '<strong><a href="scriptureInfo.php" method="post">' . $row['book'] . '</a> ' . $row['chapter'] . ':';
 			echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
 			echo '</p>';
 		}
