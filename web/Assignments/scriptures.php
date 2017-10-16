@@ -49,7 +49,7 @@
 			<form action="scriptures.php" method="post">
 				<input type="text" name="book">
 				<input type="submit" value="Search!" name="whateveryouwant">
-				<p>    Search 'ALL' to see all available scriptures!</p>
+				<p style="display: inline">    Search 'ALL' to see all available scriptures!</p>
 			</form>
 		</div>
 
