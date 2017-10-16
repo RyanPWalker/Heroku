@@ -43,13 +43,13 @@
 </head>
 <body>
 	<div class="container">
-	<h1>Search your favorite scriptures:</h1>
+	<h1>Search your favorite scriptures by book name:</h1>
 	<div class="panel panel-default">
   		<div class="panel-heading">
 			<form action="scriptures.php" method="post">
 				<input type="text" name="book">
 				<input type="submit" value="Search!" name="whateveryouwant">
-				<p style="display: inline">    Search 'ALL' to see all available scriptures!</p>
+				<p style="display: inline; font-size: 10"> -> Search 'ALL' to see all available scriptures!</p>
 			</form>
 		</div>
 
