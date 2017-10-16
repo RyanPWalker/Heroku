@@ -28,7 +28,8 @@
 </head>
 <body>
 	<div class="container">
-	<button type="button" class="btn btn-primary" href="./scriptures.php">Back</button>
+		<br>
+	<button type="button" class="btn btn-primary" onclick="location.href='./scriptures.php'">Back</button>
 	<h1>Information on <?php echo $_SESSION["book"] ?>:</h1>
 
 	<?php
