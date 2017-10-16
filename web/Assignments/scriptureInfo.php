@@ -29,7 +29,7 @@
 <body>
 	<div class="container">
 		<br>
-	<button type="button" class="btn btn-primary" onclick="location.href='./scriptures.php'"><span class="glyphicon glyphicon-triangle-left"></span>Back</button>
+	<button type="button" class="btn btn-primary" onclick="location.href='./scriptures.php'"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
 	<h1>Information on <?php echo $_SESSION["book"] ?>:</h1>
 
 	<?php
