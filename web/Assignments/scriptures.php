@@ -22,7 +22,7 @@
 	<title>Scriptures Resources!</title>
 	<style>
 		body {
-			background-color: #eeeeee;
+			background-color: #eeeeee !important;
 		}
 		
 		h1 {
@@ -42,6 +42,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="container">
 	<h1>Here are the database results:</h1>
 
 	<form action="scriptures.php" method="post">
@@ -78,6 +79,7 @@
 			echo '</p>';
 		}
 	?>
+	</div>
 
 </body>
 </html>
