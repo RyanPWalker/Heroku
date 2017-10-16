@@ -23,7 +23,9 @@
 
 	<?php
 
-		if ($_SESSION["book"] == 'John') {
+		echo $_GET['scripture'];
+
+		if ($_SESSION["book"] == 'John' || 'john') {
 			echo "Although the Gospel of John is anonymous, Christian tradition historically has attributed it to John the Apostle, son of Zebedee and one of Jesus' Twelve Apostles. The gospel is so closely related in style and content to the three surviving Johannine epistles that commentators treat the four books, along with the Book of Revelation, as a single corpus of Johannine literature, albeit not necessarily written by the same author.";
 		}
 
@@ -35,15 +37,15 @@
 			echo "The Doctrine and Covenants (sometimes abbreviated and cited as D&C or D. and C.) is a part of the open scriptural canon of several denominations of the Latter Day Saint movement. Originally published in 1835 as Doctrine and Covenants of the Church of the Latter Day Saints: Carefully Selected from the Revelations of God, editions of the book continue to be printed mainly by The Church of Jesus Christ of Latter-day Saints (LDS Church) and the Community of Christ (formerly the Reorganized Church of Jesus Christ of Latter Day Saints (RLDS Church)).";
 		}
 
-		if ($_SESSION["book"] == 'Alma') {
+		if ($_SESSION["book"] == 'Alma' || 'alma') {
 			echo "The Book of Alma (/ˈæl.mə/[1]) is one of the books that make up the Book of Mormon. The full title is The Book of Alma: The Son of Alma. The title refers to Alma the Younger, a prophet and 'chief judge' of the Nephites.";
 		}
 
-		if ($_SESSION["book"] == 'Mosiah') {
+		if ($_SESSION["book"] == 'Mosiah' || 'mosiah') {
 			echo "There are two individuals named Mosiah in the Book of Mormon. They were grandfather and grandson, respectively, and both served as king of the Nephites at Zarahemla.";
 		}
 
-		if ($_SESSION["book"] == 'Isaiah') {
+		if ($_SESSION["book"] == 'Isaiah' || 'isaiah') {
 			echo "Within the text of the Book of Isaiah, Isaiah himself is referred to as 'the prophet', but the exact relationship between the Book of Isaiah and any such historical Isaiah is complicated. The traditional view is that all 66 chapters of the book of Isaiah were written by one man, Isaiah, possibly in two periods between 740 BCE and c. 686 BCE, separated by approximately 15 years, and includes dramatic prophetic declarations of Cyrus the Great in the Bible, acting to restore the nation of Israel from Babylonian captivity. Another widely-held view is that parts of the first half of the book (chapters 1–39) originated with the historical prophet, interspersed with prose commentaries written in the time of King Josiah a hundred years later, and that the remainder of the book dates from immediately before and immediately after the end of the exile in Babylon, almost two centuries after the time of the historic prophet.";
 		}
 		
