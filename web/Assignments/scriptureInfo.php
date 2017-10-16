@@ -20,6 +20,7 @@
 	</style>
 </head>
 <body>
+	<button type="button" class="btn btn-primary" href="./scriptures.php">Back</button>
 	<h1>Information on <?php echo $_SESSION["book"] ?>:</h1>
 
 	<?php
