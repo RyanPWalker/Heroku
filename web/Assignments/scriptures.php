@@ -43,7 +43,8 @@
 	</form>
 
 	<?php
-		$searchBook = $_POST[book];
+		$_SESSION["book"] = $_POST[book];
+		$searchBook = $_SESSION["book"];
 
 		// This allows users to search without 
 		// having to capitalize the first letter
