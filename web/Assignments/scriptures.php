@@ -61,12 +61,10 @@
 			$statement = $db->prepare("SELECT * FROM scriptures");
 		}
 		$statement->execute();
-		// Go through each result
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 		{
-			// The variable "row" now holds the complete record for that
-			// row, and we can access the different values based on their
-			// name
+			// urlencode allows me to pass strings with '&' without
+			// ruining the string
 			echo '<p>';
 			echo '<strong><a href="scriptureInfo.php?scripture='.urlencode($row['book']).'" method="post">' . $row['book'] . '</a> ' . $row['chapter'] . ':';
 			echo $row['verse'] . '</strong>' . ' - ' . $row['content'];

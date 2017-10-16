@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$_SESSION["book"] = urldecode($_GET['scripture']);
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -22,8 +23,6 @@
 	<h1>Information on <?php echo $_SESSION["book"] ?>:</h1>
 
 	<?php
-
-		echo urldecode($_GET['scripture']);
 
 		if ($_SESSION["book"] == 'John' || 'john') {
 			echo "Although the Gospel of John is anonymous, Christian tradition historically has attributed it to John the Apostle, son of Zebedee and one of Jesus' Twelve Apostles. The gospel is so closely related in style and content to the three surviving Johannine epistles that commentators treat the four books, along with the Book of Revelation, as a single corpus of Johannine literature, albeit not necessarily written by the same author.";
