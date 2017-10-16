@@ -43,7 +43,9 @@
 	</form>
 
 	<?php
-		$_SESSION["book"] = $_POST[book];
+		if ($_POST[book] != NULL) {
+			$_SESSION["book"] = $_POST[book];
+		}
 		$searchBook = $_SESSION["book"];
 
 		// This allows users to search without 
