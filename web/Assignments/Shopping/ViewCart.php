@@ -61,8 +61,9 @@
 
 							<?php
 							echo "<h3>All items in your cart:</h3>";
-							foreach ($_SESSION as $key=>$val)
-								echo $val . '  <a href="ViewCart.php?Remove='. $val . '"></a><br/>';
+							foreach ($_SESSION as $key=>$val){
+								echo '<p>' . $val . '  <a href="ViewCart.php?Remove='. $val . '"></a></p><br/>';
+							}
 							?>
 
 							<p>Clear cart items?</p>
