@@ -99,7 +99,7 @@
 												<label for="copy">Email me a copy</label>
 											</div>
 											<div class="6u$ 12u$(small)">
-												<input type="checkbox" id="human" name="human" checked>
+												<input type="checkbox" id="human" name="human" required>
 												<label for="human">Not a robot</label>
 											</div>
 											<div class="12u$">

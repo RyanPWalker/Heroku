@@ -64,6 +64,7 @@
 
 							<h3>All items purchased:</h3>
 							<?php
+							echo '<ol>';
 							foreach ($_SESSION as $key=>$val) {
 								if ($key !== 'numItems') {
 									echo '<li>' . $val . '</li>';
