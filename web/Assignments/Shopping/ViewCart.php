@@ -75,9 +75,11 @@
 							?>
 
 							<br><br><br>
-							<li><button class="button" onclick="location.href='./index.php'">Home</button></li>
-							<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
-							<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
+							<ul class="actions">
+								<li><button class="button" onclick="location.href='./index.php'">Home</button></li>
+								<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
+								<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
+							</ul>
 						</div>
 					</div>
 
