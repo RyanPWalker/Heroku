@@ -85,6 +85,52 @@
 	?>
 	</div>
 </div>
+<div class="panel panel-default">
+  		<div class="panel-heading">
+			<form action="scriptures.php" method="post">
+				<input type="text" name="book">
+				<input type="text" name="chapter">
+				<input type="text" name="verse">
+				<textarea type="text" name="content"></textarea>
+				<input type="submit" value="Update!" name="whateveryouwant">
+			</form>
+		</div>
+
+	<div class="panel-body">
+	<?php
+		if ($_POST[book] != NULL) {
+			$_SESSION["book"] = $_POST[book];
+		}
+		if ($_POST[chapter] != NULL) {
+			$_SESSION["chapter"] = $_POST[chapter];
+		}
+		if ($_POST[verse] != NULL) {
+			$_SESSION["verse"] = $_POST[verse];
+		}
+		if ($_POST[content] != NULL) {
+			$_SESSION["content"] = $_POST[content];
+		}
+		$searchBook = $_SESSION["book"];
+
+		
+		
+		// Storing the database into a session doesn't seem to work.
+		//$db = $_SESSION["database"];
+		$statement = $db->prepare("SELECT s.id AS Scripture_id, s.book AS Book, s.verse AS Verse, s.content AS Content, t.topic_name AS Topic FROM common_lookup AS cl INNER JOIN scriptures AS s ON         s.id = cl.scipture  INNER JOIN topic AS t ON t.topic_id = cl.topic;");
+		$statement->execute();
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			// urlencode allows me to pass strings with '&' without
+			// ruining the string
+			echo '<p>';
+			echo '<strong><a href="scriptureInfo.php?scripture='.urlencode($row['book']).'" method="post">' . $row['book'] . '</a> ' . $row['chapter'] . ':';
+			echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
+			echo $row['topic_name'];
+			echo '</p>';
+		}
+	?>
+	</div>
+</div>
 </div>
 
 </body>
