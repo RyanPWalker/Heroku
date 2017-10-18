@@ -92,6 +92,7 @@ session_start();
 								</iframe>
 								<br>
 								<br>
+								<br>
 								<p id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</p>
 								<p>Click on one to add it to your cart!</p>
 							</header>
@@ -206,13 +207,13 @@ session_start();
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="field half first">
-										<input type="text" name="name" id="name" placeholder="Name" />
+										<input type="text" name="name" id="name" placeholder="Name" required />
 									</div>
 									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
+										<input type="email" name="email" id="email" placeholder="Email" required />
 									</div>
 									<div class="field">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
+										<textarea name="message" id="message" placeholder="Message" required ></textarea>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Send" class="special" onclick="alert('Message sent!');" /></li>
