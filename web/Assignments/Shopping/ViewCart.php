@@ -19,7 +19,7 @@ session_start();
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
 
 							<!-- Nav -->
@@ -47,9 +47,13 @@ session_start();
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+							<h1>View Cart</h1>
+							<span style="display: inline"><img src="images/pic13.jpg" alt="" /></span>
 							<p><?php print_r($_SESSION); ?></p>
+							<?php echo '<pre>';
+							var_dump($_SESSION);
+							echo '</pre>';
+							?>
 						</div>
 					</div>
 

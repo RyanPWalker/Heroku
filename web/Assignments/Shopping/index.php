@@ -29,9 +29,10 @@ session_start();
 		$_SESSION["Rattata"] = $pokemon;
 	}
 
-	$numItems;
-	$_SESSION["numItems"] == null ? ($numItems = 0) : $numItems++;
-	$_SESSION["numItems"] = $numItems;
+	if ($_SESSION["numItems"] == null) {
+		($_SESSION["numItems"] = 0;
+	}
+	else { $_SESSION["numItems"] = $_SESSION["numItems"] + 1; }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -106,7 +107,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Squirtle">
 										<h2>Squirtle</h2>
 										<div class="content">
 											<p>A water-type pokemon.  Enjoys a fun day at the beach and makes a great life gaurd for the kids!</p>
@@ -117,7 +118,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic03.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Bulbasaur">
 										<h2>Bulbasaur</h2>
 										<div class="content">
 											<p>A grass-type pokemon.</p>
@@ -128,7 +129,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic04.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Pikachu">
 										<h2>Pikachu</h2>
 										<div class="content">
 											<p>An electric-type pokemon.  Always full of energy and never ceases to shock you!</p>
@@ -139,7 +140,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic05.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Pidgey">
 										<h2>Pidgey</h2>
 										<div class="content">
 											<p>A flying-type pokemon.  Makes for good company and likes to sing!</p>
@@ -150,7 +151,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic06.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Metapod">
 										<h2>Metapod</h2>
 										<div class="content">
 											<p>A grass-type pokemon.  Doesn't do much.  Makes a good paper weight.</p>
@@ -161,7 +162,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic07.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Snorlax">
 										<h2>Snorlax</h2>
 										<div class="content">
 											<p>A normal-type pokemon.  Loves to sleep, great cuddler.</p>
@@ -172,7 +173,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic08.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Growlithe">
 										<h2>Growlithe</h2>
 										<div class="content">
 											<p>A fire-type pokemon.  Take him for a run or play his favorite game- fireball!</p>
@@ -183,7 +184,7 @@ session_start();
 									<span class="image">
 										<img src="images/pic09.jpg" alt="" />
 									</span>
-									<a href="index.php">
+									<a href="index.php?pokemon=Rattata">
 										<h2>Rattata</h2>
 										<div class="content">
 											<p>A normal-type pokemon.  Likes to run and dig.</p>
@@ -210,7 +211,7 @@ session_start();
 										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
+										<li><input type="submit" value="Send" class="special" onclick="alert('Message sent!');" /></li>
 									</ul>
 								</form>
 							</section>
@@ -241,7 +242,7 @@ session_start();
 			$( document ).ready(function() {
 				var video =  iframe.getElementById('infoVideo'); 
 				video.mute();
-				console.log('muted?');
+				console.log('muted');
 			});
 		</script>
 
