@@ -1,15 +1,15 @@
 <?php
 	session_start();
 
+	$remove = $_GET['Remove'];
+	unset($_SESSION['$remove'][$remove]);
+
 	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {
 		$numItems++;
 	}
 	if ($numItems == -1) {$numItems = 0;}
 	$_SESSION["numItems"] = $numItems;
-
-	$remove = $_GET['Remove'];
-	unset($_SESSION[$remove][$remove]);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -58,7 +58,7 @@
 					<div id="main">
 						<div class="inner">
 							<h1>View Cart</h1>
-							<span><img src="images/pic13.jpg" style="display: inline; float:right; height: 350px; width: 350px;" alt="" /></span>
+							<span><img src="images/pic13.jpg" class="image right" style="height: 350px; width: 350px;" alt="" /></span>
 
 							<?php
 							echo "<h3>All items in your cart:</h3>";

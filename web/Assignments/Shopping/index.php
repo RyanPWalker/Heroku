@@ -59,7 +59,7 @@ session_start();
 								<a href="index.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
-								<span class="image right"><img src="images/pic15.jpg" alt="" /></span>
+								<span class="image right" style="width: 250px; height: 250px;"><img src="images/pic15.jpg" alt="" /></span>
 
 							<!-- Nav -->
 								<nav>

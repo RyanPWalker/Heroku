@@ -59,7 +59,7 @@
 							echo '<ol>';
 							foreach ($_SESSION as $key=>$val) {
 								if ($key !== 'numItems') {
-									echo '<li>' $val . '</li>';
+									echo '<li>' . $val . '</li>';
 								}
 							}
 							echo '</ol>';
