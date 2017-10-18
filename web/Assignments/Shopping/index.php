@@ -199,12 +199,12 @@ session_start();
 									</a>
 								</article>
 							</section>
-						</div>
-						<ul class="actions">
+							<ul class="actions">
 							<li><button class="button" onclick="location.href='./index.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button></li>
 							<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
 							<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
 						</ul>
+						</div>
 					</div>
 
 				<!-- Footer -->
