@@ -50,6 +50,7 @@ session_start();
 							<h1>View Cart</h1>
 							<span style="display: inline"><img src="images/pic13.jpg" alt="" /></span>
 
+							<?php
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val)
 								echo $val."<br/>";
