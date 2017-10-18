@@ -88,7 +88,7 @@ session_start();
 						<div class="inner">
 							<header>
 								<h1>Welcome to Adopt-a-mon!<br />
-								Adopt your new pokemon friend <a href="index.php/#pokemon">here</a> today!.</h1>
+								Adopt your new pokemon friend <a href="index.php/#pokemon">here</a> today!</h1>
 								<p>A brief intro to pokemon:</p>
 								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=0">
 								</iframe>

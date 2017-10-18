@@ -2,7 +2,12 @@
 	session_start();
 
 	$remove = $_GET['Remove'];
-	unset($_SESSION['$remove'][$remove]);
+	if (isset($_POST['Remove'])) {
+    $key=array_search($_GET[$remove],$_SESSION[$remove]);
+    if($key!==false)
+    unset($_SESSION[$remove][$key]);
+    $_SESSION[$remove] = array_values($_SESSION[$remove]);
+	}
 
 	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {
@@ -61,6 +66,7 @@
 							<span><img src="images/pic13.jpg" class="image right" style="height: 350px; width: 350px;" alt="" /></span>
 
 							<?php
+							echo $remove;
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val){
 								if ($key !== 'numItems') {

@@ -107,8 +107,8 @@
 											</div>
 											<div class="12u$">
 												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="special" /></li>
-													<li><input type="reset" value="Reset" /></li>
+													<li><input type="submit" value="Confirm Purchase" class="special" /></li>
+													<li><input type="reset" value="View Cart" onclick="location.href='./ViewCart.php'" /></li>
 												</ul>
 											</div>
 										</div>
