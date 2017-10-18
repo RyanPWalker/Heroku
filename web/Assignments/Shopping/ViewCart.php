@@ -46,7 +46,7 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="ViewCart.php">View Cart <?php echo $_SESSION["numItems"]; ?></a></li>
+							<li><a href="ViewCart.php">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</a></li>
 							<li><a href="Checkout.php">Checkout</a></li>
 							<li><a href="index.php">About</a></li>
 							<li><a href="index.php">Help</a></li>
@@ -57,12 +57,12 @@
 					<div id="main">
 						<div class="inner">
 							<h1>View Cart</h1>
-							<span style="display: inline; float:right; height: 350px; width: 350px;"><img src="images/pic13.jpg" alt="" /></span>
+							<span><img src="images/pic13.jpg" style="display: inline; float:right; height: 350px; width: 350px;" alt="" /></span>
 
 							<?php
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val)
-								echo $val . '  <a href="ViewCart.php?Remove='. $val . '">' . '<br/>';
+								echo $val . '  <a href="ViewCart.php?Remove='. $val . '"></a><br/>';
 							?>
 
 							<p>Clear cart items?</p>

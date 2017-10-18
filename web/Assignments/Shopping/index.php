@@ -75,7 +75,7 @@ session_start();
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="ViewCart.php">View Cart</a></li>
+							<li><a href="ViewCart.php">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</a></li>
 							<li><a href="Checkout.php">Checkout</a></li>
 							<li><a href="index.php">About</a></li>
 							<li><a href="index.php">Help</a></li>
