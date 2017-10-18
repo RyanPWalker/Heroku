@@ -84,7 +84,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
+								<h2>Ask questions or get help:</h2>
 								<form method="post" action="#">
 									<div class="field half first">
 										<input type="text" name="name" id="name" placeholder="Name" />

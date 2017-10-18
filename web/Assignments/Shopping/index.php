@@ -94,9 +94,9 @@ session_start();
 								</iframe>
 
 								<br><br><br>
-								
+
 								<h2 id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</h2>
-								<h3>Click on one to add it to your cart!</h3>
+								<h2>Click on one to add it to your cart!</h2>
 							</header>
 							<section class="tiles">
 								<article class="style1">
@@ -200,9 +200,9 @@ session_start();
 								</article>
 							</section>
 						</div>
-						<button class="button" onclick="location.href='./index.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button>
-						<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button>
-						<button class="button" onclick="location.href='./Checkout.php'">Checkout!</button>
+						<li><button class="button" onclick="location.href='./index.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button></li>
+						<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
+						<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
 					</div>
 
 				<!-- Footer -->

@@ -61,7 +61,9 @@
 							<span><img src="images/pic13.jpg" class="image right" style="height: 350px; width: 350px;" alt="" /></span>
 
 							<?php
-							echo 'Removed: ' . $remove;
+							if ($remove != null) {
+								echo 'Removed: ' . $remove;
+							}
 							echo "<h3>All items in your cart:</h3>";
 							echo '<ol>';
 							foreach ($_SESSION as $key=>$val) {
@@ -73,9 +75,9 @@
 							?>
 
 							<br><br><br>
-							<button class="button" onclick="location.href='./index.php'">Home</button>
-							<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button>
-							<button class="button" onclick="location.href='./Checkout.php'">Checkout!</button>
+							<li><button class="button" onclick="location.href='./index.php'">Home</button></li>
+							<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
+							<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
 						</div>
 					</div>
 
@@ -83,7 +85,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
+								<h2>Ask questions or get help:</h2>
 								<form method="post" action="#">
 									<div class="field half first">
 										<input type="text" name="name" id="name" placeholder="Name" />
