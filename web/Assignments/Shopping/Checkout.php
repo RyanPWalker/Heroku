@@ -77,10 +77,10 @@
 												<input type="email" name="email" id="email" value="" placeholder="Email" required/>
 											</div>
 											<div class="6u 12u$(xsmall)">
-												<input type="text" name="address" id="name" value="" placeholder="Address" required/>
+												<input type="text" name="address" id="address" value="" placeholder="Address" required/>
 											</div>
 											<div class="6u$ 12u$(xsmall)">
-												<input type="email" name="city" id="email" value="" placeholder="City, State, Zip" required/>
+												<input type="text" name="city" id="city" value="" placeholder="City, State, Zip" required/>
 											</div>
 											<div class="4u 12u$(small)">
 												<input type="radio" id="priority-low" name="priority" checked>
