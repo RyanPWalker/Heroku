@@ -1,18 +1,45 @@
+<?php
+session_start();
+	$pokemon = $_GET['pokemon'];
+	if ($pokemon === 'Charmander') {
+		$_SESSION["Charmander"] = $pokemon;
+	}
+	if ($pokemon === 'Squirtle') {
+		$_SESSION["Squirtle"] = $pokemon;
+	}
+	if ($pokemon === 'Bulbasaur') {
+		$_SESSION["Bulbasaur"] = $pokemon;
+	}
+	if ($pokemon === 'Pikachu') {
+		$_SESSION["Pikachu"] = $pokemon;
+	}
+	if ($pokemon === 'Pidgey') {
+		$_SESSION["Pidgey"] = $pokemon;
+	}
+	if ($pokemon === 'Metapod') {
+		$_SESSION["Metapod"] = $pokemon;
+	}
+	if ($pokemon === 'Snorlax') {
+		$_SESSION["Snorlax"] = $pokemon;
+	}
+	if ($pokemon === 'Growlithe') {
+		$_SESSION["Growlithe"] = $pokemon;
+	}
+	if ($pokemon === 'Rattata') {
+		$_SESSION["Rattata"] = $pokemon;
+	}
+
+	$numItems;
+	$_SESSION["numItems"] == null ? ($numItems = 0) : $numItems++;
+	$_SESSION["numItems"] = $numItems;
+?>
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<title>Adopt-a-mon</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -24,7 +51,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
 
 							<!-- Nav -->
@@ -41,11 +68,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="ViewCart.php">View Cart</a></li>
+							<li><a href="Checkout.php">Checkout</a></li>
+							<li><a href="index.php">About</a></li>
+							<li><a href="index.php">Help</a></li>
 						</ul>
 					</nav>
 
@@ -53,19 +80,25 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>This is Phantom, a free, fully responsive site<br />
-								template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+								<h1>Welcome to Adopt-a-mon!<br />
+								Adopt your new pokemon friend <a href="index.php/#pokemon">here</a> today!.</h1>
+								<p>A brief intro to pokemon:</p>
+								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=1">
+								</iframe>
+								<br>
+								<br>
+								<p id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</p>
+								<p>Click on one to add it to your cart!</p>
 							</header>
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Magna</h2>
+									<a href="index.php?pokemon=Charmander">
+										<h2>Charmander</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A fire-type pokemon.  Loves to play outisde and great for cuddling in the winter.</p>
 										</div>
 									</a>
 								</article>
@@ -73,10 +106,10 @@
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Lorem</h2>
+									<a href="index.php">
+										<h2>Squirtle</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A water-type pokemon.  Enjoys a fun day at the beach and makes a great life gaurd for the kids!</p>
 										</div>
 									</a>
 								</article>
@@ -84,10 +117,10 @@
 									<span class="image">
 										<img src="images/pic03.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
+									<a href="index.php">
+										<h2>Bulbasaur</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A grass-type pokemon.</p>
 										</div>
 									</a>
 								</article>
@@ -95,10 +128,10 @@
 									<span class="image">
 										<img src="images/pic04.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Tempus</h2>
+									<a href="index.php">
+										<h2>Pikachu</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>An electric-type pokemon.  Always full of energy and never ceases to shock you!</p>
 										</div>
 									</a>
 								</article>
@@ -106,10 +139,10 @@
 									<span class="image">
 										<img src="images/pic05.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Aliquam</h2>
+									<a href="index.php">
+										<h2>Pidgey</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A flying-type pokemon.  Makes for good company and likes to sing!</p>
 										</div>
 									</a>
 								</article>
@@ -117,10 +150,10 @@
 									<span class="image">
 										<img src="images/pic06.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Veroeros</h2>
+									<a href="index.php">
+										<h2>Metapod</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A grass-type pokemon.  Doesn't do much.  Makes a good paper weight.</p>
 										</div>
 									</a>
 								</article>
@@ -128,10 +161,10 @@
 									<span class="image">
 										<img src="images/pic07.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Ipsum</h2>
+									<a href="index.php">
+										<h2>Snorlax</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A normal-type pokemon.  Loves to sleep, great cuddler.</p>
 										</div>
 									</a>
 								</article>
@@ -139,10 +172,10 @@
 									<span class="image">
 										<img src="images/pic08.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Dolor</h2>
+									<a href="index.php">
+										<h2>Growlithe</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A fire-type pokemon.  Take him for a run or play his favorite game- fireball!</p>
 										</div>
 									</a>
 								</article>
@@ -150,43 +183,10 @@
 									<span class="image">
 										<img src="images/pic09.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Nullam</h2>
+									<a href="index.php">
+										<h2>Rattata</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>A normal-type pokemon.  Likes to run and dig.</p>
 										</div>
 									</a>
 								</article>
@@ -219,16 +219,13 @@
 								<ul class="icons">
 									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
 									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Adopt-a-mon. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
@@ -239,8 +236,14 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			$( document ).ready(function() {
+				var video =  iframe.getElementById('infoVideo'); 
+				video.mute();
+				console.log('muted?');
+			});
+		</script>
 
 	</body>
 </html>
