@@ -32,11 +32,12 @@ session_start();
 		session_unset();
 	}
 
-	$numItems = $_SESSION["numItems"];
-	if ($_SESSION["numItems"] == null) {
-		$numItems = 0;
-		$_SESSION["numItems"] = $numItems;
-	} else { $_SESSION["numItems"] = $numItems + 1; }
+	$numItems = 0;
+	foreach ($_SESSION as $key=>$val) {
+		$numItems++;
+	}
+
+	$_SESSION["numItems"] = $numItems;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -88,7 +89,7 @@ session_start();
 								<h1>Welcome to Adopt-a-mon!<br />
 								Adopt your new pokemon friend <a href="index.php/#pokemon">here</a> today!.</h1>
 								<p>A brief intro to pokemon:</p>
-								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=1">
+								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=0">
 								</iframe>
 								<br>
 								<br>

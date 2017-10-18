@@ -1,5 +1,14 @@
 <?php
-session_start();
+	session_start();
+	$numItems = 0;
+	foreach ($_SESSION as $key=>$val) {
+		$numItems++;
+	}
+
+	$remove = $_GET['Remove'];
+	unset($_SESSION[$remove][$remove]);
+
+	$_SESSION["numItems"] = $numItems;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -37,7 +46,7 @@ session_start();
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="ViewCart.php">View Cart</a></li>
+							<li><a href="ViewCart.php">View Cart <?php echo $_SESSION["numItems"]; ?></a></li>
 							<li><a href="Checkout.php">Checkout</a></li>
 							<li><a href="index.php">About</a></li>
 							<li><a href="index.php">Help</a></li>
@@ -48,16 +57,16 @@ session_start();
 					<div id="main">
 						<div class="inner">
 							<h1>View Cart</h1>
-							<span style="display: inline"><img src="images/pic13.jpg" alt="" /></span>
+							<span style="display: inline; float:right; height: 350px; width: 350px;"><img src="images/pic13.jpg" alt="" /></span>
 
 							<?php
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val)
-								echo $val."<br/>";
+								echo $val . '  <a href="ViewCart.php?Remove='. $val . '">' . '<br/>';
 							?>
 
 							<p>Clear cart items?</p>
-							<button onclick="location.href='./index.php?pokemon=Clear'" value="Clear">
+							<button class="button" onclick="location.href='./index.php?pokemon=Clear'" value="Clear">
 						</div>
 					</div>
 
@@ -86,10 +95,7 @@ session_start();
 								<ul class="icons">
 									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
 									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>
