@@ -61,15 +61,18 @@
 							<span><img src="images/pic13.jpg" class="image right" style="height: 350px; width: 350px;" alt="" /></span>
 
 							<?php
-							echo $remove;
+							echo 'Removed: ' . $remove;
 							echo "<h3>All items in your cart:</h3>";
-							foreach ($_SESSION as $key=>$val){
+							echo '<ol>';
+							foreach ($_SESSION as $key=>$val) {
 								if ($key !== 'numItems') {
-									echo $val . '  <a href="ViewCart.php?Remove='. $val . '">Remove</a><br/>';
+									echo '<li>' . $val . '  <a href="ViewCart.php?Remove='. $val . '">Remove</a></li>';
 								}
 							}
+							echo '</ol>';
 							?>
 
+							<br><br><br>
 							<button class="button" onclick="location.href='./index.php'">Home</button>
 							<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button>
 							<button class="button" onclick="location.href='./Checkout.php'">Checkout!</button>
@@ -107,7 +110,7 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Adopt-a-mon. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

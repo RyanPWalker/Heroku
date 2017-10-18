@@ -92,10 +92,10 @@ session_start();
 								<p>A brief intro to pokemon:</p>
 								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=0">
 								</iframe>
-								<br>
-								<br>
-								<br>
-								<h3 id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</h3>
+
+								<br><br><br>
+								
+								<h2 id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</h2>
 								<h3>Click on one to add it to your cart!</h3>
 							</header>
 							<section class="tiles">
@@ -200,6 +200,9 @@ session_start();
 								</article>
 							</section>
 						</div>
+						<button class="button" onclick="location.href='./index.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button>
+						<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button>
+						<button class="button" onclick="location.href='./Checkout.php'">Checkout!</button>
 					</div>
 
 				<!-- Footer -->

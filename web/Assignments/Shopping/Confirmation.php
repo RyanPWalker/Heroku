@@ -1,5 +1,9 @@
 <?php
 	session_start();
+
+	$remove = $_GET['Remove'];
+  unset($_SESSION[$remove]);
+
 	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {
 		$numItems++;
@@ -10,9 +14,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Checkout</title>
+		<title>View Cart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="refresh" content="5;url=./index.php?pokemon=Clear" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
@@ -43,7 +48,7 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="ViewCart.php">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</a></li>
+							<li><a href="ViewCart.php">View Cart  (0)</a></li>
 							<li><a href="Checkout.php">Checkout</a></li>
 							<li><a href="index.php">About</a></li>
 							<li><a href="index.php">Help</a></li>
@@ -53,10 +58,11 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Checkout</h1>
+							<h1>Thank you, your purchase has been confirmed.</h1>
+							<span><img src="images/hug.gif" class="image right" style="height: 350px; width: 350px;" alt="" /></span>
+
+							<h3>All items purchased:</h3>
 							<?php
-							echo '<h3>All items in your cart:</h3>';
-							echo '<ol>';
 							foreach ($_SESSION as $key=>$val) {
 								if ($key !== 'numItems') {
 									echo '<li>' . $val . '</li>';
@@ -64,57 +70,13 @@
 							}
 							echo '</ol>';
 							?>
+							<h3>Shipped to: <?php echo $_POST['address'] ?></h3>
+							<h3>You will be redirected back to the home page in 5 seconds.</h3>
 
-							<!-- Form -->
-								<section>
-									<h2>Form</h2>
-									<form action="Confirmation.php" method="post">
-										<div class="row uniform">
-											<div class="6u 12u$(xsmall)">
-												<input type="text" name="fullname" id="name" value="" placeholder="Name" required/>
-											</div>
-											<div class="6u$ 12u$(xsmall)">
-												<input type="email" name="email" id="email" value="" placeholder="Email" required/>
-											</div>
-											<div class="6u 12u$(xsmall)">
-												<input type="text" name="address" id="name" value="" placeholder="Address" required/>
-											</div>
-											<div class="6u$ 12u$(xsmall)">
-												<input type="email" name="city" id="email" value="" placeholder="City, State, Zip" required/>
-											</div>
-											<div class="4u 12u$(small)">
-												<input type="radio" id="priority-low" name="priority" checked>
-												<label for="priority-low">Slow Shipping</label>
-											</div>
-											<div class="4u 12u$(small)">
-												<input type="radio" id="priority-normal" name="priority">
-												<label for="priority-normal">Normal Shipping</label>
-											</div>
-											<div class="4u$ 12u$(small)">
-												<input type="radio" id="priority-high" name="priority">
-												<label for="priority-high">Fast Shipping</label>
-											</div>
-											<div class="6u 12u$(small)">
-												<input type="checkbox" id="copy" name="copy">
-												<label for="copy">Email me a copy</label>
-											</div>
-											<div class="6u$ 12u$(small)">
-												<input type="checkbox" id="human" name="human" checked>
-												<label for="human">Not a robot</label>
-											</div>
-											<div class="12u$">
-												<textarea name="message" id="message" placeholder="Additional comments..." rows="6"></textarea>
-											</div>
-											<div class="12u$">
-												<ul class="actions">
-													<li><input type="submit" value="Confirm Purchase" class="special" /></li>
-													<li><input type="reset" value="Return to Cart" onclick="location.href='./ViewCart.php'" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</section>
+							<br><br><br>
+							<button class="button" onclick="location.href='./index.php'">Home</button>
 						</div>
+						<?php session_unset(); ?>
 					</div>
 
 				<!-- Footer -->
