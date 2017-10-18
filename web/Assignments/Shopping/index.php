@@ -28,13 +28,15 @@ session_start();
 	if ($pokemon === 'Rattata') {
 		$_SESSION["Rattata"] = $pokemon;
 	}
+	if ($pokemon === 'Clear') {
+		session_unset();
+	}
 
-	$numItems;
+	$numItems = $_SESSION["numItems"];
 	if ($_SESSION["numItems"] == null) {
 		$numItems = 0;
 		$_SESSION["numItems"] = $numItems;
-	}
-	else { $_SESSION["numItems"] = $numItems + 1; }
+	} else { $_SESSION["numItems"] = $numItems + 1; }
 ?>
 <!DOCTYPE HTML>
 <html>

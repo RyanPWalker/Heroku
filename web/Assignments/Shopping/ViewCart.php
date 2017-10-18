@@ -36,11 +36,11 @@ session_start();
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="ViewCart.php">View Cart</a></li>
+							<li><a href="Checkout.php">Checkout</a></li>
+							<li><a href="index.php">About</a></li>
+							<li><a href="index.php">Help</a></li>
 						</ul>
 					</nav>
 
@@ -49,15 +49,14 @@ session_start();
 						<div class="inner">
 							<h1>View Cart</h1>
 							<span style="display: inline"><img src="images/pic13.jpg" alt="" /></span>
-							<p><?php print_r($_SESSION); ?></p>
-							<?php echo '<pre>';
-							var_dump($_SESSION);
-							echo '</pre>';
 
-							echo "<h3> PHP List All Session Variables</h3>";
-    foreach ($_SESSION as $key=>$val)
-    echo $key." ".$val."<br/>";
+							echo "<h3>All items in your cart:</h3>";
+							foreach ($_SESSION as $key=>$val)
+								echo $val."<br/>";
 							?>
+
+							<p>Clear cart items?</p>
+							<button onclick="location.href='./index.php?pokemon=Clear'" value="Clear">
 						</div>
 					</div>
 
