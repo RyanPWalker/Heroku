@@ -32,7 +32,7 @@ session_start();
 		session_unset();
 	}
 
-	$numItems = 0;
+	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {
 		$numItems++;
 	}

@@ -62,12 +62,13 @@
 							<?php
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val){
-								echo '<p>' . $val . '  <a href="ViewCart.php?Remove='. $val . '"></a></p><br/>';
+								echo $val . '  <a href="ViewCart.php?Remove='. $val . '">Remove</a><br/>';
 							}
 							?>
 
-							<p>Clear cart items?</p>
-							<button class="button" onclick="location.href='./index.php?pokemon=Clear'" value="Clear">
+							<button class="button" onclick="location.href='./index.php'">Home</button>
+							<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button>
+							<button class="button" onclick="location.href='./Checkout.php'">Checkout!</button>
 						</div>
 					</div>
 
