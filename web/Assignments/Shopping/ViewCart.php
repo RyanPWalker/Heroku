@@ -53,6 +53,10 @@ session_start();
 							<?php echo '<pre>';
 							var_dump($_SESSION);
 							echo '</pre>';
+
+							echo "<h3> PHP List All Session Variables</h3>";
+    foreach ($_SESSION as $key=>$val)
+    echo $key." ".$val."<br/>";
 							?>
 						</div>
 					</div>

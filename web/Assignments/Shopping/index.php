@@ -29,10 +29,12 @@ session_start();
 		$_SESSION["Rattata"] = $pokemon;
 	}
 
+	$numItems;
 	if ($_SESSION["numItems"] == null) {
-		$_SESSION["numItems"] = 0;
+		$numItems = 0;
+		$_SESSION["numItems"] = $numItems;
 	}
-	else { $_SESSION["numItems"] = $_SESSION["numItems"] + 1; }
+	else { $_SESSION["numItems"] = $numItems + 1; }
 ?>
 <!DOCTYPE HTML>
 <html>
