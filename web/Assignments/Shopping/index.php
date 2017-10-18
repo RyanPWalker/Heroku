@@ -36,7 +36,7 @@ session_start();
 	foreach ($_SESSION as $key=>$val) {
 		$numItems++;
 	}
-
+	if ($numItems == -1) {$numItems = 0;}
 	$_SESSION["numItems"] = $numItems;
 ?>
 <!DOCTYPE HTML>
@@ -59,6 +59,7 @@ session_start();
 								<a href="index.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
+								<span class="image right"><img src="images/pic15.jpg" alt="" /></span>
 
 							<!-- Nav -->
 								<nav>
@@ -205,7 +206,7 @@ session_start();
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
+								<h2>Ask questions or get help:</h2>
 								<form method="post" action="#">
 									<div class="field half first">
 										<input type="text" name="name" id="name" placeholder="Name" required />

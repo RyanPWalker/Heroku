@@ -1,10 +1,16 @@
 <?php
-session_start();
+	session_start();
+	$numItems = -1;
+	foreach ($_SESSION as $key=>$val) {
+		$numItems++;
+	}
+	if ($numItems == -1) {$numItems = 0;}
+	$_SESSION["numItems"] = $numItems;
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>View Cart</title>
+		<title>Checkout</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -48,9 +54,15 @@ session_start();
 					<div id="main">
 						<div class="inner">
 							<h1>View Cart</h1>
-							echo "<h3>All items in your cart:</h3>";
-							foreach ($_SESSION as $key=>$val)
-								echo $val."<br/>";
+							<?php
+							echo '<h3>All items in your cart:</h3>';
+							echo '<ol>';
+							foreach ($_SESSION as $key=>$val) {
+								if ($key !== 'numItems') {
+									echo '<li>' $val . '</li>';
+								}
+							}
+							echo '</ol>';
 							?>
 
 							<!-- Form -->
@@ -64,28 +76,23 @@ session_start();
 											<div class="6u$ 12u$(xsmall)">
 												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
 											</div>
-											<div class="12u$">
-												<div class="select-wrapper">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
+											<div class="6u 12u$(xsmall)">
+												<input type="text" name="demo-address" id="demo-name" value="" placeholder="Address" />
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												<input type="email" name="demo-city" id="demo-email" value="" placeholder="City, State, Zip" />
 											</div>
 											<div class="4u 12u$(small)">
 												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
+												<label for="demo-priority-low">Slow Shipping</label>
 											</div>
 											<div class="4u 12u$(small)">
 												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Normal</label>
+												<label for="demo-priority-normal">Normal Shipping</label>
 											</div>
 											<div class="4u$ 12u$(small)">
 												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
+												<label for="demo-priority-high">Fast Shipping</label>
 											</div>
 											<div class="6u 12u$(small)">
 												<input type="checkbox" id="demo-copy" name="demo-copy">
@@ -96,7 +103,7 @@ session_start();
 												<label for="demo-human">Not a robot</label>
 											</div>
 											<div class="12u$">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+												<textarea name="demo-message" id="demo-message" placeholder="Additional comments..." rows="6"></textarea>
 											</div>
 											<div class="12u$">
 												<ul class="actions">
@@ -135,10 +142,7 @@ session_start();
 								<ul class="icons">
 									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
 									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>

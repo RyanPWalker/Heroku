@@ -1,14 +1,15 @@
 <?php
 	session_start();
-	$numItems = 0;
+
+	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {
 		$numItems++;
 	}
+	if ($numItems == -1) {$numItems = 0;}
+	$_SESSION["numItems"] = $numItems;
 
 	$remove = $_GET['Remove'];
 	unset($_SESSION[$remove][$remove]);
-
-	$_SESSION["numItems"] = $numItems;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -62,7 +63,9 @@
 							<?php
 							echo "<h3>All items in your cart:</h3>";
 							foreach ($_SESSION as $key=>$val){
-								echo $val . '  <a href="ViewCart.php?Remove='. $val . '">Remove</a><br/>';
+								if ($key !== 'numItems') {
+									echo $val . '  <a href="ViewCart.php?Remove='. $val . '">Remove</a><br/>';
+								}
 							}
 							?>
 
