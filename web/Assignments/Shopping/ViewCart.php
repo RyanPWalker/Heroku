@@ -2,12 +2,7 @@
 	session_start();
 
 	$remove = $_GET['Remove'];
-	if (isset($_POST['Remove'])) {
-    $key=array_search($_GET[$remove],$_SESSION[$remove]);
-    if($key!==false)
-    unset($_SESSION[$remove][$key]);
-    $_SESSION[$remove] = array_values($_SESSION[$remove]);
-	}
+  unset($_SESSION[$remove]);
 
 	$numItems = -1;
 	foreach ($_SESSION as $key=>$val) {

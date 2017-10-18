@@ -95,8 +95,8 @@ session_start();
 								<br>
 								<br>
 								<br>
-								<p id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</p>
-								<p>Click on one to add it to your cart!</p>
+								<h3 id="pokemon">Below you'll find the currently homeless pokemon desperately looking for a home.</h3>
+								<h3>Click on one to add it to your cart!</h3>
 							</header>
 							<section class="tiles">
 								<article class="style1">

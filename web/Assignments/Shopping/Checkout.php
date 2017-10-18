@@ -53,7 +53,7 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>View Cart</h1>
+							<h1>Checkout</h1>
 							<?php
 							echo '<h3>All items in your cart:</h3>';
 							echo '<ol>';
