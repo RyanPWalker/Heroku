@@ -88,7 +88,7 @@ session_start();
 						<div class="inner">
 							<header>
 								<h1>Welcome to Adopt-a-mon!<br />
-								Adopt your new pokemon friend <a href="index.php/#pokemon">here</a> today!</h1>
+								Adopt your new pokemon friend <a href="#pokemon">here</a> today!</h1>
 								<p>A brief intro to pokemon:</p>
 								<iframe id="infoVideo" width="1000" height="400" frameBorder="0" src="https://www.youtube.com/embed/rhhuAm2rSGE?autoplay=0">
 								</iframe>
@@ -200,7 +200,7 @@ session_start();
 								</article>
 							</section>
 							<ul class="actions">
-							<li><button class="button" onclick="location.href='./index.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button></li>
+							<li><button class="button" onclick="location.href='./ViewCart.php'">View Cart  (<?php echo $_SESSION["numItems"]; ?>)</button></li>
 							<li><button class="button" onclick="location.href='./index.php?pokemon=Clear'">Clear All Items</button></li>
 							<li><button class="button" onclick="location.href='./Checkout.php'">Checkout!</button></li>
 						</ul>
