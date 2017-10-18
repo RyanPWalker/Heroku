@@ -30,7 +30,7 @@ session_start();
 	}
 
 	if ($_SESSION["numItems"] == null) {
-		($_SESSION["numItems"] = 0;
+		$_SESSION["numItems"] = 0;
 	}
 	else { $_SESSION["numItems"] = $_SESSION["numItems"] + 1; }
 ?>
