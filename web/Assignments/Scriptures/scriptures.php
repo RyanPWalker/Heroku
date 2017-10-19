@@ -96,7 +96,8 @@
 				$statement = $db->prepare("SELECT * FROM topic;");
 				$statement->execute();
 
-				while($devResult = $statement->fetch(PDO::FETCH_ASSOC) { echo "<input type='checkbox' name=" . $devResult['topic_name'] . "value='" . $devResult['topic_name'] . ">" . $devResult['topic_name'] . "</input>"; }  ?>
+				while($devResult = $statement->fetch(PDO::FETCH_ASSOC)) { echo "<input type='checkbox' name=" . $devResult['topic_name'] . "value='" . $devResult['topic_name'] . ">" . $devResult['topic_name'] . "</input>"; }  
+				?>
 				<input type="submit" value="Update!" name="whateveryouwant">
 			</form>
 		</div>
