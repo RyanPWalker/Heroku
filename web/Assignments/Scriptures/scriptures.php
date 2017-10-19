@@ -92,7 +92,7 @@
 				<input type="text" name="chapter">
 				<input type="text" name="verse">
 				<textarea type="text" name="content"></textarea>
-				<?php  while($devResult = pg_fetch_assoc($devQuery)){   echo "<input type='checkbox' name=$devResult[name] value='$devResult[name]'>$devResult[name]</input>"; }  ?>
+				<?php   while($devResult = pg_fetch_assoc($devQuery)) {        echo "<input type='checkbox' name=" .          $devResult['name'] . "value='" .          $devResult['name'] . ">" .          $devResult['name'] . "</input>"; }  ?>
 				<input type="submit" value="Update!" name="whateveryouwant">
 			</form>
 		</div>
