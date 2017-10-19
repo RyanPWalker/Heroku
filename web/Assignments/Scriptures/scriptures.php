@@ -93,10 +93,18 @@
 				<input type="text" name="verse">
 				<textarea type="text" name="content"></textarea>
 				<?php
-				$statement = $db->prepare("SELECT * FROM topic;");
-				$statement->execute();
+					$statement = $db->prepare("SELECT * FROM topic;");
+					$statement->execute();
 
-				while($devResult = $statement->fetch(PDO::FETCH_ASSOC)) { echo "<input type='checkbox' name=" . $devResult['topic_name'] . "value='" . $devResult['topic_name'] . ">" . $devResult['topic_name'] . "</input>"; }  
+					while($devResult = $statement->fetch(PDO::FETCH_ASSOC)) {
+						echo "<input type='checkbox' name=";
+						echo $devResult['topic_name'];
+						echo "value='";
+						echo $devResult['topic_name'];
+						echo "'>";
+						echo $devResult['topic_name'];
+						echo "</input>";
+					}  
 				?>
 				<input type="submit" value="Update!" name="whateveryouwant">
 			</form>
