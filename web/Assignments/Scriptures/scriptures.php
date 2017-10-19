@@ -86,13 +86,17 @@
 	</div>
 </div>
 <div class="panel panel-default">
+	<?php
+	$statement = $db->prepare("SELECT s.id AS Scripture_id, s.book AS Book, s.verse AS Verse, s.chapter AS Chapter, s.content AS Content, t.topic_name AS Topic FROM common_lookup AS cl INNER JOIN scriptures AS s ON         s.id = cl.scipture  INNER JOIN topic AS t ON t.topic_id = cl.topic;");
+		$statement->execute();
+	?>
   		<div class="panel-heading">
 			<form action="scriptures.php" method="post">
 				<input type="text" name="book">
 				<input type="text" name="chapter">
 				<input type="text" name="verse">
 				<textarea type="text" name="content"></textarea>
-				<?php   while($devResult = pg_fetch_assoc($devQuery)) {        echo "<input type='checkbox' name=" .          $devResult['name'] . "value='" .          $devResult['name'] . ">" .          $devResult['name'] . "</input>"; }  ?>
+				<?php   while($devResult = $statement ->fetch(PDO::FETCH_ASSOC) {        echo "<input type='checkbox' name=" .          $devResult['name'] . "value='" .          $devResult['name'] . ">" .          $devResult['name'] . "</input>"; }  ?>
 				<input type="submit" value="Update!" name="whateveryouwant">
 			</form>
 		</div>
