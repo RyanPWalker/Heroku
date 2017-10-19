@@ -86,17 +86,17 @@
 	</div>
 </div>
 <div class="panel panel-default">
-	<?php
-	$statement = $db->prepare("SELECT topic_name FROM topic;");
-		$statement->execute();
-	?>
   		<div class="panel-heading">
 			<form action="scriptures.php" method="post">
 				<input type="text" name="book">
 				<input type="text" name="chapter">
 				<input type="text" name="verse">
 				<textarea type="text" name="content"></textarea>
-				<?php   while($devResult = $statement->fetch(PDO::FETCH_ASSOC) {        echo "<input type='checkbox' name=" .          $devResult['topic_name'] . "value='" .          $devResult['topic_name'] . ">" .          $devResult['topic_name'] . "</input>"; }  ?>
+				<?php
+				$statement = $db->prepare("SELECT * FROM topic;");
+				$statement->execute();
+
+				while($devResult = $statement->fetch(PDO::FETCH_ASSOC) { echo "<input type='checkbox' name=" . $devResult['topic_name'] . "value='" . $devResult['topic_name'] . ">" . $devResult['topic_name'] . "</input>"; }  ?>
 				<input type="submit" value="Update!" name="whateveryouwant">
 			</form>
 		</div>
