@@ -112,21 +112,14 @@
 
 	<div class="panel-body">
 	<?php
-		if ($_POST[book] != NULL) {
 			$book = $_POST[book];
-		}
-		if ($_POST[chapter] != NULL) {
 			$chapter = $_POST[chapter];
-		}
-		if ($_POST[verse] != NULL) {
 			$verse = $_POST[verse];
-		}
-		if ($_POST[content] != NULL) {
 			$content = $_POST[content];
-		}
+		
 		$searchBook = $_SESSION["book"];
 
-		$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+		$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES($book, $chapter, $verse, $content)';
 		$statement = $db->prepare($query);
 		// Now we bind the values to the placeholders. This does some nice things
 		// including sanitizing the input with regard to sql commands.
