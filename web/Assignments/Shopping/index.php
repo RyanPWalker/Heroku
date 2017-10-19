@@ -56,7 +56,7 @@ session_start();
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="index.php" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
 								<span class="image right" style="width: 250px; height: 250px;"><img src="images/pic15.jpg" alt="" /></span>

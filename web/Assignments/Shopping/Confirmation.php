@@ -17,7 +17,7 @@
 		<title>View Cart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="refresh" content="10;url=./index.php?pokemon=Clear" />
+		<meta http-equiv="refresh" content="15;url=./index.php?pokemon=Clear" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
@@ -29,7 +29,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="index.php" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
 
@@ -73,7 +73,7 @@
 							echo '</ol>';
 							?>
 							<p>Shipped to: <?php echo $_POST['address'] ?></p>
-							<p>You will be redirected back to the home page in 10 seconds.</p>
+							<p>You will be redirected back to the home page in 15 seconds.</p>
 
 							<br><br><br>
 							<button class="button" onclick="location.href='./index.php?pokemon=Clear'">Home</button>
@@ -97,7 +97,7 @@
 										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
+										<li><input type="submit" value="Send" class="special" onclick="alert('Message sent!');" /></li>
 									</ul>
 								</form>
 							</section>

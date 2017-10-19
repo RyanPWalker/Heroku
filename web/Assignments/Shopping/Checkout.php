@@ -24,7 +24,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="index.php" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Adopt-a-mon</span>
 								</a>
 
@@ -133,7 +133,7 @@
 										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
+										<li><input type="submit" value="Send" class="special" onclick="alert('Message sent!');" /></li>
 									</ul>
 								</form>
 							</section>
