@@ -87,7 +87,7 @@
 </div>
 <h1>Add your favorite scriptures to the database:</h1>
 <div class="panel panel-default">
-  		<div class="panel-heading">
+  	<div class="panel-heading">
 			<form action="scriptures.php" method="post">
 				<input type="text" name="book">
 				<input type="text" name="chapter">
@@ -120,7 +120,7 @@
 		
 		$searchBook = $_SESSION["book"];
 
-		$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+		$query = 'INSERT INTO scriptures(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
 		$statement = $db->prepare($query);
 		// Now we bind the values to the placeholders. This does some nice things
 		// including sanitizing the input with regard to sql commands.
