@@ -151,8 +151,6 @@
 			echo $row['topic_name'];
 			echo '</p>';
 		}
-
-		die();
 	?>
 	</div>
 </div>
