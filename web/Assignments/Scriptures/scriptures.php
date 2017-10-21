@@ -113,7 +113,6 @@
 
 	<div class="panel-body">
 	<?php
-	try {
 			$book = $_POST[book];
 			$chapter = $_POST[chapter];
 			$verse = $_POST[verse];
@@ -129,13 +128,7 @@
 		$statement->bindValue(':content', $content);
 		$statement->execute();
 
-	}
-	catch {
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}
+
 		
 		// Storing the database into a session doesn't seem to work.
 		//$db = $_SESSION["database"];
