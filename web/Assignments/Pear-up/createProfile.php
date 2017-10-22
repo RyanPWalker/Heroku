@@ -49,7 +49,7 @@
 															<option value="0">- Select Age -</option>
 															<?php
 																$count = 1;
-																for ($x = 0; $x <= 100; $x++) {
+																for ($x = 0; $x < 100; $x++) {
 															  	echo '<option value="' . $count . '">' . $count . '</option>';
 															  	$count++;
 																}

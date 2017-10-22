@@ -45,13 +45,14 @@
 							$factone = $_POST[factone];
 							$facttwo = $_POST[facttwo];
 							$factthree = $_POST[factthree];
+							echo $name . $age . $city . $state . $email . $factone . $facttwo . $factthree;
 
 							$query;
 
-							if ($_GET['task'] == 'insert') {
+							if ($_GET['task'] === 'insert') {
 							$query = 'INSERT INTO user_info(name, age, city, state, email, factone, facttwo, factthree) VALUES(:name, :age, :city, :state, :email, :factone, :facttwo, :factthree)';
 							}
-							
+
 							$statement = $db->prepare($query);
 							$statement->bindValue(':name', $name);
 							$statement->bindValue(':age', $age);
