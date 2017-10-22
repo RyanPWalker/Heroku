@@ -1,3 +1,22 @@
+<?php
+	session_start();
+	$db = NULL;
+	try {
+		$dbUrl = getenv('DATABASE_URL');
+		$dbopts = parse_url($dbUrl);
+		$dbHost = $dbopts["host"];
+		$dbPort = $dbopts["port"];
+		$dbUser = $dbopts["user"];
+		$dbPassword = $dbopts["pass"];
+		$dbName = ltrim($dbopts["path"],'/');
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch (PDOException $ex) {
+		echo "Error connecting to DB. Details: $ex";
+		die();
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -16,83 +35,49 @@
 
 						<!-- One -->
 							<section id="one">
+								<img src="./images/banner.jpg" style="display: block; margin: 0 auto; height: 150px; width: 225px">
 								<div class="container">
 									<header class="major">
-										<h2>Settings</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
-									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="fa-code">Write all the code</li>
-										<li class="fa-cubes">Stack small boxes</li>
-										<li class="fa-book">Read books and stuff</li>
-										<li class="fa-coffee">Drink much coffee</li>
-										<li class="fa-bolt">Lightning bolt</li>
-										<li class="fa-users">Shadow clone technique</li>
-									</ul>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
+										<h2>Edit Pearfile</h2>
+										<p>Make the adjustments, then click <em>Submit</em> to save.</p>
+									<form method="post" action="./confirmation.php?task=update">
 										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="6u 12u(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
+											<div class="6u 12u(xsmall)">
+													<div class="select-wrapper">
+														<select name="age" id="age">
+															<option value="0">- Select Age -</option>
+															<?php
+																$count = 1;
+																for ($x = 0; $x < 100; $x++) {
+															  	echo '<option value="' . $count . '">' . $count . '</option>';
+															  	$count++;
+																}
+															?>
+														</select>
+													</div>
+												</div>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+											<div class="6u 12u(xsmall)"><input type="text" name="city" id="city" placeholder="HomeTown" /></div>
+											<div class="6u 12u(xsmall)"><input type="text" name="state" id="state" placeholder="State" /></div>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+											<div class="12u"><input type="email" name="email" id="email" placeholder="Email" /></div>
+										</div>
+										<div class="row uniform">
+											<div class="12u"><input type="text" name="factone" id="factone" placeholder="Fun Fact One" /></div>
+										</div>
+										<div class="row uniform">
+											<div class="12u"><input type="text" name="facttwo" id="facttwo" placeholder="Fun Fact Two" /></div>
+										</div>
+										<div class="row uniform">
+											<div class="12u"><input type="text" name="factthree" id="factthree" placeholder="Fun Fact Three" /></div>
 										</div>
 										<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
-													<li><input type="submit" class="special" value="Send Message" /></li>
+													<li><input type="submit" class="special" value="Submit" /></li>
 													<li><input type="reset" value="Reset Form" /></li>
 												</ul>
 											</div>

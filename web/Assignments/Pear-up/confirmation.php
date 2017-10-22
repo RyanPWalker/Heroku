@@ -45,12 +45,15 @@
 							$factone = $_POST[factone];
 							$facttwo = $_POST[facttwo];
 							$factthree = $_POST[factthree];
-							echo $name . $age . $city . $state . $email . $factone . $facttwo . $factthree;
+							echo $name . $age . $city . $state . $email . $factone . $facttwo . $factthree . $_GET['task'];
 
 							$query;
 
 							if ($_GET['task'] === 'insert') {
 							$query = 'INSERT INTO user_info(name, age, city, state, email, factone, facttwo, factthree) VALUES(:name, :age, :city, :state, :email, :factone, :facttwo, :factthree)';
+							}
+							if ($_GET['task'] === 'update') {
+							$query = 'UPDATE user_info SET (name = :name, age = :age, city = :city, state = :state, email = :email, factone = :factone, facttwo = :facttwo, factthree = :factthree) WHERE email = :email';
 							}
 
 							$statement = $db->prepare($query);
