@@ -1,3 +1,22 @@
+<?php
+	session_start();
+	$db = NULL;
+	try {
+		$dbUrl = getenv('DATABASE_URL');
+		$dbopts = parse_url($dbUrl);
+		$dbHost = $dbopts["host"];
+		$dbPort = $dbopts["port"];
+		$dbUser = $dbopts["user"];
+		$dbPassword = $dbopts["pass"];
+		$dbName = ltrim($dbopts["path"],'/');
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch (PDOException $ex) {
+		echo "Error connecting to DB. Details: $ex";
+		die();
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -19,9 +38,9 @@
 								<img src="./images/banner.jpg" style="display: block; margin: 0 auto; height: 150px; width: 225px">
 								<div class="container">
 									<header class="major">
-										<h2>Create Profile</h2>
+										<h2>Create Pearfile</h2>
 										<p>Fill out the form to set up your <em>free</em> account today!</p>
-									<form method="post" action="#">
+									<form method="post" action="./confirmation.php?task=insert">
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
 											<div class="6u 12u(xsmall)">
@@ -38,7 +57,7 @@
 												</div>
 										</div>
 										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="hometown" id="hometown" placeholder="HomeTown" /></div>
+											<div class="6u 12u(xsmall)"><input type="text" name="city" id="city" placeholder="HomeTown" /></div>
 											<div class="6u 12u(xsmall)"><input type="text" name="state" id="state" placeholder="State" /></div>
 										</div>
 										<div class="row uniform">

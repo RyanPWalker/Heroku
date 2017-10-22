@@ -120,8 +120,6 @@
 
 		$query = 'INSERT INTO scriptures(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
 		$statement = $db->prepare($query);
-		// Now we bind the values to the placeholders. This does some nice things
-		// including sanitizing the input with regard to sql commands.
 		$statement->bindValue(':book', $book);
 		$statement->bindValue(':chapter', $chapter);
 		$statement->bindValue(':verse', $verse);
