@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	if ($_SESSION['online'] != true) {
+		/* Redirect browser */
+		header("Location: ./signIn.php");
+		exit();
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -18,10 +27,10 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">A Few Accomplishments</a></li>
+						<li><a href="#one" class="active">About Me</a></li>
+						<li><a href="#three">Find People</a></li>
 						<li><a href="#four">Contact</a></li>
+						<li><a href="./settings.php">Settings</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -50,22 +59,6 @@
 										<p>Just a flippin awesome website where you can meet cool peeps</p>
 									</header>
 									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="fa-code">Write all the code</li>
-										<li class="fa-cubes">Stack small boxes</li>
-										<li class="fa-book">Read books and stuff</li>
-										<li class="fa-coffee">Drink much coffee</li>
-										<li class="fa-bolt">Lightning bolt</li>
-										<li class="fa-users">Shadow clone technique</li>
-									</ul>
 								</div>
 							</section>
 

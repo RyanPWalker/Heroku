@@ -1,5 +1,8 @@
 <?php
 	session_start();
+
+	$_SESSION['online'] = true;
+
 	$db = NULL;
 	try {
 		$dbUrl = getenv('DATABASE_URL');
