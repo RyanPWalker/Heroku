@@ -62,8 +62,7 @@
 														echo 'exected.';
 														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 															$foundName = $row['name'];
-													}
-													catch {
+													} catch (Exception $e) {
 														if (($foundName == NULL) && ($name != NULL)) {
 															echo '<strong style="color:red">Username not found.</strong>';
 														}
