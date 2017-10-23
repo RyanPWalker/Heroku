@@ -38,11 +38,11 @@
 										<p>Make the adjustments, then click <em>Submit</em> to save.</p>
 									<form method="post" action="./confirmation.php?task=update">
 										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
+											<?php echo '<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" value="' . $_SESSION['name'} . '" placeholder="Name" autofocus /></div>'; ?>
 											<div class="6u 12u(xsmall)">
 													<div class="select-wrapper">
 														<select name="age" id="age">
-															<option value="0">- Select Age -</option>
+															<option value="0"><?php echo $_SESSION[''] ?></option>
 															<?php
 																$count = 1;
 																for ($x = 0; $x < 100; $x++) {

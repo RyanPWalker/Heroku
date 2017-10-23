@@ -74,34 +74,7 @@
 										<h2>Pear-Up</h2>
 										<p>Just a flippin awesome website where you can meet cool peeps</p>
 									</header>
-									<h2>About Me</h2>
-									<ul class="alt">
-										<?php
-											echo '<h5>Name</h5>';
-											echo '<li>' . $_SESSION['name'] . '</li>';
-											echo '<h5>Age</h5>';
-											echo '<li>' . $_SESSION['age'] . '</li>';
-											echo '<h5>Email</h5>';
-											echo '<li>' . $_SESSION['email'] . '</li>';
-											echo '<h5>City</h5>';
-											echo '<li>' . $_SESSION['city'] . '</li>';
-											echo '<h5>State</h5>';
-											echo '<li>' . $_SESSION['state'] . '</li>';
-											echo '<h5>Fact One</h5>';
-											echo '<li>' . $_SESSION['factone'] . '</li>';
-											echo '<h5>Fact Two</h5>';
-											echo '<li>' . $_SESSION['facttwo'] . '</li>';
-											echo '<h5>Fact Three</h5>';
-											echo '<li>' . $_SESSION['factthree'] . '</li>';
-										?>
-									</ul>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>Meet new people</h3>
+									<h3>Meet new people (Feature Coming Soon- in development!)</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
 									<div class="features">
 										<article>
@@ -129,11 +102,37 @@
 								</div>
 							</section>
 
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+									<h2>About Me</h2>
+									<ul class="alt">
+										<?php
+											echo '<h5>Name</h5>';
+											echo '<li>' . $_SESSION['name'] . '</li>';
+											echo '<h5>Age</h5>';
+											echo '<li>' . $_SESSION['age'] . '</li>';
+											echo '<h5>Email</h5>';
+											echo '<li>' . $_SESSION['email'] . '</li>';
+											echo '<h5>City</h5>';
+											echo '<li>' . $_SESSION['city'] . '</li>';
+											echo '<h5>State</h5>';
+											echo '<li>' . $_SESSION['state'] . '</li>';
+											echo '<h5>Fact One</h5>';
+											echo '<li>' . $_SESSION['factone'] . '</li>';
+											echo '<h5>Fact Two</h5>';
+											echo '<li>' . $_SESSION['facttwo'] . '</li>';
+											echo '<h5>Fact Three</h5>';
+											echo '<li>' . $_SESSION['factthree'] . '</li>';
+										?>
+									</ul>
+								</div>
+							</section>
+
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<h3>Ask Questions or Get Help</h3>
 									<form method="post" action="#">
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
@@ -148,7 +147,7 @@
 										<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
-													<li><input type="submit" class="special" value="Send Message" /></li>
+													<li><input type="submit" class="special" value="Send Message" onclick="alert('Message sent.')" /></li>
 													<li><input type="reset" value="Reset Form" /></li>
 												</ul>
 											</div>
