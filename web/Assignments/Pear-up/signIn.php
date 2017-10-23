@@ -54,12 +54,16 @@
 														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 															$foundName = $row['name'];
 														}
+														//if (($foundName == NULL) && ($name != NULL)) {
+														//	echo '<strong style="color:red">Username not found.</strong>';
+														//}
 													} catch (Exception $e) {
-														if (($foundName == NULL) && ($name != NULL)) {
+														// do nothing
+													}
+
+													if ($name != NULL) {
 															echo '<strong style="color:red">Username not found.</strong>';
 														}
-													}
-													echo $foundName;
 													
 													if ($foundName != NULL) {
 														header("Location: ./index.php");
