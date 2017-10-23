@@ -11,6 +11,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript">
+			function warn() {
+				if (confirm('Are you sure you want to save this thing into the database?')) {
+				   location.href='./confirmation.php?delete';
+				} else {
+				    // Do nothing!
+				}
+			}
+		</script>
 	</head>
 	<body>
 
@@ -66,6 +75,7 @@
 												<ul class="actions">
 													<li><input type="submit" class="special" value="Submit" /></li>
 													<li><input type="reset" value="Reset Form" /></li>
+													<li><input type="button" value="Delete Account" onclick="warn()" style="background-color: red" /></li>
 												</ul>
 											</div>
 										</div>
