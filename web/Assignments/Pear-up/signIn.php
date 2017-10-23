@@ -37,28 +37,30 @@
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
 											<div class="6u 12u(xsmall)"><input type="text" name="password" id="password" placeholder="Password" /></div>
 										</div>
-										<?php
-											$query = 'SELECT name FROM user_info WHERE name = :name';
-											$statement = $db->prepare($query);
-											$statement->bindValue(':name', $name, PDO::PARAM_STR);
-											$statement->execute();
-											$foundName = $statement->fetchAll(PDO::FETCH_ASSOC);
-											echo $foundName['name'];
-											if ($foundName['name'] != NULL) {
-												/* Redirect browser */
-												header("Location: ./index.php");
-												exit();
-											}
-											if (($foundName['name'] == NULL) && ($name != NULL)) {
-												echo '<strong style="color:red">Username not found.</strong>';
-											}
-										?>
 										<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
 													<li><input type="submit" class="special" value="Log in!" /></li>
 													<li><input type="button" onclick="location.href='./createProfile.php'" value="Create Account" /></li>
 												</ul>
+												<?php
+													$query = 'SELECT name FROM user_info WHERE name = :name';
+													$statement = $db->prepare($query);
+													$statement->bindValue(':name', $name, PDO::PARAM_STR);
+													$statement->execute();
+													while ($foundName = $statement->fetchAll(PDO::FETCH_ASSOC)) {
+														echo $foundName['name'];
+													}
+													
+													if ($foundName['name'] != NULL) {
+														/* Redirect browser */
+														header("Location: ./index.php");
+														exit();
+													}
+													if (($foundName['name'] == NULL) && ($name != NULL)) {
+														echo '<strong style="color:red">Username not found.</strong>';
+													}
+												?>
 											</div>
 										</div>
 									</form>
