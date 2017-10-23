@@ -44,9 +44,9 @@
 													<li><input type="button" onclick="location.href='./createProfile.php'" value="Create Account" /></li>
 												</ul>
 												<?php
-													$query = 'SELECT name FROM user_info WHERE name = :name';
+													$query = 'SELECT name FROM user_info WHERE name = ' . $name;
 													$statement = $db->prepare($query);
-													$statement->bindValue(':name', $name, PDO::PARAM_STR);
+													//$statement->bindValue(':name', $name, PDO::PARAM_STR);
 													$statement->execute();
 													while ($foundName = $statement->fetchAll(PDO::FETCH_ASSOC)) {
 														echo $foundName['name'];
