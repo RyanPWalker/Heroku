@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script type="text/javascript">
 			function warn() {
-				if (confirm('Are you sure you want to save this thing into the database?')) {
+				if (confirm('Are you sure you want to delete your account forever?')) {
 				   location.href='./confirmation.php?delete';
 				} else {
 				    // Do nothing!

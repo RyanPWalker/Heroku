@@ -40,14 +40,20 @@
 
 							if ($_GET['task'] == 'insert') {
 							$query = 'INSERT INTO user_info(name, age, city, state, email, fact_one, fact_two, fact_three) VALUES(:name, :age, :city, :state, :email, :factone, :facttwo, :factthree)';
-								echo 'Made it 1';
+								echo 'Inserting';
 							}
 							if ($_GET['task'] == 'update') {
 							$query = 'UPDATE user_info SET (name = :name, age = :age, city = :city, state = :state, email = :email, fact_one = :factone, fact_two = :facttwo, fact_three = :factthree) WHERE email = :email';
-								echo 'Made it 2';
+								echo 'Updating';
+							}
+							if ($_GET['task'] == 'delete') {
+								//Not sure I want to allow this feature yet until I have the password hash working.
+								// Till then, here is the code commented out.
+								//$query = 'DELETE FROM user_info WHERE name = ":name"';
+								echo 'Deleting';
 							}
 
-							echo 'preparing query';
+							echo 'preparing query<br>';
 							$statement = $db->prepare($query);
 							$statement->bindValue(':name', $name);
 							$statement->bindValue(':age', $age);

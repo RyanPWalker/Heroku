@@ -9,6 +9,19 @@
 
 	require("dbConnect.php");
 	$db = get_db();
+
+	$query = "SELECT * FROM user_info WHERE name ='" . $_SESSION['name'] . "'";
+	$statement = $db->prepare($query);
+	$statement->execute();
+	while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+		$_SESSION['age'] = $row['age'];
+		$_SESSION['email'] = $row['email'];
+		$_SESSION['city'] = $row['city'];
+		$_SESSION['state'] = $row['state'];
+		$_SESSION['factone'] = $row['fact_one'];
+		$_SESSION['facttwo'] = $row['fact_two'];
+		$_SESSION['factthree'] = $row['fact_three'];
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -61,14 +74,34 @@
 										<h2>Pear-Up</h2>
 										<p>Just a flippin awesome website where you can meet cool peeps</p>
 									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+									<h2>About Me</h2>
+									<ul class="alt">
+										<?php
+											echo '<h5>Name</h5>';
+											echo '<li>' . $_SESSION['name'] . '</li>';
+											echo '<h5>Age</h5>';
+											echo '<li>' . $_SESSION['age'] . '</li>';
+											echo '<h5>Email</h5>';
+											echo '<li>' . $_SESSION['email'] . '</li>';
+											echo '<h5>City</h5>';
+											echo '<li>' . $_SESSION['city'] . '</li>';
+											echo '<h5>State</h5>';
+											echo '<li>' . $_SESSION['state'] . '</li>';
+											echo '<h5>Fact One</h5>';
+											echo '<li>' . $_SESSION['factone'] . '</li>';
+											echo '<h5>Fact Two</h5>';
+											echo '<li>' . $_SESSION['facttwo'] . '</li>';
+											echo '<h5>Fact Three</h5>';
+											echo '<li>' . $_SESSION['factthree'] . '</li>';
+										?>
+									</ul>
 								</div>
 							</section>
 
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>A Few Accomplishments</h3>
+									<h3>Meet new people</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
 									<div class="features">
 										<article>
