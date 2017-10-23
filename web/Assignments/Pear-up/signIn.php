@@ -48,16 +48,16 @@
 													$statement = $db->prepare($query);
 													//$statement->bindValue(':name', $name, PDO::PARAM_STR);
 													$statement->execute();
-													while ($foundName = $statement->fetchAll(PDO::FETCH_ASSOC)) {
-														echo $foundName['name'];
+													while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+														$foundName = $row['name'];
 													}
 													
-													if ($foundName['name'] != NULL) {
+													if ($foundName != NULL) {
 														/* Redirect browser */
 														header("Location: ./index.php");
 														exit();
 													}
-													if (($foundName['name'] == NULL) && ($name != NULL)) {
+													if (($foundName == NULL) && ($name != NULL)) {
 														echo '<strong style="color:red">Username not found.</strong>';
 													}
 												?>
