@@ -68,7 +68,6 @@
 														}
 													
 													if ($foundName != NULL) {
-														/* Redirect browser */
 														header("Location: ./index.php");
 														exit();
 													}
