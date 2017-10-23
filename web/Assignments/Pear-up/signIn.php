@@ -14,8 +14,10 @@
 	$statement = $db->prepare($query);
 	$statement->bindValue(':name', $name);
 	$statement->execute();
-	$foundName = $statement->fetch(PDO::FETCH_ASSOC);
-	if ($foundName != NULL) {
+	while($foundName = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+	}
+	if ($foundName['name'] != NULL) {
 		/* Redirect browser */
 		header("Location: ./index.php");
 		exit();
@@ -49,7 +51,7 @@
 											<div class="6u 12u(xsmall)"><input type="text" name="password" id="password" placeholder="Password" /></div>
 										</div>
 										<?php
-											if ($foundName == NULL && $name != NULL) {
+											if (($foundName['name'] == NULL) && ($name != NULL)) {
 												echo '<strong style="color:red">Username not found.</strong>';
 											}
 										?>
