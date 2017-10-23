@@ -10,16 +10,16 @@
 	$name = $_POST[name];
 	$_SESSION['name'] = $name;
 
-	//$query = 'SELECT name FROM user_info WHERE name = (:name)';
-	//$statement = $db->prepare($query);
-	//$statement->bindValue(':name', $name);
-	//$statement->execute();
-	//$foundName = $statement->fetch(PDO::FETCH_ASSOC);
-	//if ($foundName['name'] != NULL) {
+	$query = 'SELECT name FROM user_info WHERE name = :name';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':name', $name);
+	$statement->execute();
+	$foundName = $statement->fetch(PDO::FETCH_ASSOC);
+	if ($foundName['name'] != NULL) {
 		/* Redirect browser */
-		//header("Location: ./index.php");
-		//exit();
-	//}
+		header("Location: ./index.php");
+		exit();
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -48,11 +48,6 @@
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
 											<div class="6u 12u(xsmall)"><input type="text" name="password" id="password" placeholder="Password" /></div>
 										</div>
-										<?php
-											//if (/*$foundName['name'] == NULL) && */($name != NULL)) {
-											//	echo '<strong style="color:red">Username not found.</strong>';
-											//}
-										?>
 										<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
