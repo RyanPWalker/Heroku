@@ -34,7 +34,7 @@
 							$factone = $_POST[factone];
 							$facttwo = $_POST[facttwo];
 							$factthree = $_POST[factthree];
-							echo $name . $age . $city . $state . $email . $factone . $facttwo . $factthree . $_GET['task'];
+							echo $name . ' ' . $age . ' ' . $city . ' ' . $state . ' ' . $email . ' ' . $factone . ' ' . $facttwo . ' ' . $factthree . ' ' . $_GET['task'];
 
 							$query;
 
@@ -45,16 +45,15 @@
 							if ($_GET['task'] == 'update') {
 							$query = 'UPDATE user_info SET name = :name, age = :age, city = :city, state = :state, email = :email, fact_one = :factone, fact_two = :facttwo, fact_three = :factthree WHERE email = :email';
 								echo 'Updating';
-								//UPDATE user_info SET city = 'Las Vegas', state = 'Nevada' WHERE name = 'ryan';
 							}
 							if ($_GET['task'] == 'delete') {
-								//Not sure I want to allow this feature yet until I have the password hash working.
+								// Not sure I want to allow this feature yet until I have the password hash working.
 								// Till then, here is the code commented out.
 								//$query = 'DELETE FROM user_info WHERE name = ":name"';
 								echo 'Deleting';
+								session_unset();
 							}
 
-							echo 'preparing query<br>';
 							$statement = $db->prepare($query);
 							$statement->bindValue(':name', $name);
 							$statement->bindValue(':age', $age);
@@ -65,7 +64,6 @@
 							$statement->bindValue(':facttwo', $facttwo);
 							$statement->bindValue(':factthree', $factthree);
 							$statement->execute();
-							echo 'executed';
 						?>
 					</div>
 

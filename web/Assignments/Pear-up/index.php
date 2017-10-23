@@ -108,22 +108,22 @@
 									<h2>About Me</h2>
 									<ul class="alt">
 										<?php
-											echo '<h5>Name</h5>';
+											echo '<h4 style="margin: 1 0 0 0;">Name</h4>';
 											echo '<li>' . $_SESSION['name'] . '</li>';
-											echo '<h5>Age</h5>';
-											echo '<li>' . $_SESSION['age'] . '</li>';
-											echo '<h5>Email</h5>';
-											echo '<li>' . $_SESSION['email'] . '</li>';
-											echo '<h5>City</h5>';
-											echo '<li>' . $_SESSION['city'] . '</li>';
-											echo '<h5>State</h5>';
-											echo '<li>' . $_SESSION['state'] . '</li>';
-											echo '<h5>Fact One</h5>';
-											echo '<li>' . $_SESSION['factone'] . '</li>';
-											echo '<h5>Fact Two</h5>';
-											echo '<li>' . $_SESSION['facttwo'] . '</li>';
-											echo '<h5>Fact Three</h5>';
-											echo '<li>' . $_SESSION['factthree'] . '</li>';
+											echo '<h4>Age</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['age'] . '</li>';
+											echo '<h4>Email</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['email'] . '</li>';
+											echo '<h4>City</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['city'] . '</li>';
+											echo '<h4>State</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['state'] . '</li>';
+											echo '<h4>Fact One</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['factone'] . '</li>';
+											echo '<h4>Fact Two</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['facttwo'] . '</li>';
+											echo '<h4>Fact Three</h4>';
+											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['factthree'] . '</li>';
 										?>
 									</ul>
 								</div>

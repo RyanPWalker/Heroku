@@ -44,23 +44,19 @@
 													<li><input type="button" onclick="location.href='./createProfile.php'" value="Create Account" /></li>
 												</ul>
 												<?php
-													echo $name;
 
 													try {
 														//$query = 'SELECT name FROM user_info WHERE name = ":name"';
 														$query = "SELECT name FROM user_info WHERE name ='" . $name . "'";
-														echo 'preparing query';
 														$statement = $db->prepare($query);
 														//$statement->bindValue(':name', $name, PDO::PARAM_STR);
 														$statement->execute();
-														echo 'executed.';
 														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 															$foundName = $row['name'];
 														}
 													} catch (Exception $e) {
 														if (($foundName == NULL) && ($name != NULL)) {
 															echo '<strong style="color:red">Username not found.</strong>';
-															echo $e;
 														}
 													}
 													
