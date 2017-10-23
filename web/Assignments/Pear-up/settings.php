@@ -38,7 +38,7 @@
 										<p>Make the adjustments, then click <em>Submit</em> to save.</p>
 									<form method="post" action="./confirmation.php?task=update">
 										<div class="row uniform">
-											<?php echo '<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" value="' . $_SESSION['name'} . '" placeholder="Name" autofocus /></div>'; ?>
+											<?php echo '<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" value="' . $_SESSION['name'] . '" placeholder="Name" autofocus /></div>'; ?>
 											<div class="6u 12u(xsmall)">
 													<div class="select-wrapper">
 														<select name="age" id="age">
