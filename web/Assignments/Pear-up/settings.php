@@ -55,20 +55,20 @@
 												</div>
 										</div>
 										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="city" id="city" placeholder="HomeTown" /></div>
-											<div class="6u 12u(xsmall)"><input type="text" name="state" id="state" placeholder="State" /></div>
+											<?php echo '<div class="6u 12u(xsmall)"><input type="text" name="city" id="city" value="' . $_SESSION['city'] . '" placeholder="HomeTown" /></div>'; ?>
+											<?php echo '<div class="6u 12u(xsmall)"><input type="text" name="state" id="state" value="' . $_SESSION['state'] . '" placeholder="State" /></div>'; ?>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<?php echo '<div class="12u"><input type="email" name="email" id="email" value="' . $_SESSION['email'] . '" placeholder="Email" /></div>'; ?>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="text" name="factone" id="factone" placeholder="Fun Fact One" /></div>
+											<?php echo '<div class="12u"><input type="text" name="factone" id="factone" value="' . $_SESSION['factone'] . '" placeholder="Fun Fact One" /></div>'; ?>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="text" name="facttwo" id="facttwo" placeholder="Fun Fact Two" /></div>
+											<?php echo '<div class="12u"><input type="text" name="facttwo" id="facttwo" value="' . $_SESSION['facttwo'] . '" placeholder="Fun Fact Two" /></div>'; ?>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="text" name="factthree" id="factthree" placeholder="Fun Fact Three" /></div>
+											<?php echo '<div class="12u"><input type="text" name="factthree" id="factthree" value="' . $_SESSION['factthree'] . '" placeholder="Fun Fact Three" /></div>'; ?>
 										</div>
 										<div class="row uniform">
 											<div class="12u">
