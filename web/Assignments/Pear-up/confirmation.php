@@ -34,7 +34,7 @@
 							$factone = $_POST[factone];
 							$facttwo = $_POST[facttwo];
 							$factthree = $_POST[factthree];
-							echo $name . ' ' . $age . ' ' . $city . ' ' . $state . ' ' . $email . ' ' . $factone . ' ' . $facttwo . ' ' . $factthree . ' ' . $_GET['task'];
+							echo $name . ' ' . $age . ' ' . $city . ' ' . $state . ' ' . $email . ' ' . $factone . ' ' . $facttwo . ' ' . $factthree;
 
 							$query;
 
