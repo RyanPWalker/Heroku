@@ -14,10 +14,10 @@
 	$statement = $db->prepare($query);
 	$statement->bindValue(':name', $name);
 	$statement->execute();
-	$foundName = $statement->fetch(PDO::FETCH_ASSOC))
+	$foundName = $statement->fetch(PDO::FETCH_ASSOC);
 	if ($foundName != NULL) {
 		/* Redirect browser */
-		header("Location: ./signIn.php");
+		header("Location: ./index.php");
 		exit();
 	}
 ?>
