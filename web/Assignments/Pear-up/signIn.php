@@ -60,10 +60,10 @@
 												<?php
 													echo $name;
 													try {
-														$query = 'SELECT name FROM user_info WHERE name = ":name"';
+														$query = 'SELECT name FROM user_info WHERE name = "' . $name . '"';
 														echo 'preparing query';
 														$statement = $db->prepare($query);
-														$statement->bindValue(':name', $name, PDO::PARAM_STR);
+														//$statement->bindValue(':name', $name, PDO::PARAM_STR);
 														$statement->execute();
 														echo 'exected.';
 														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
