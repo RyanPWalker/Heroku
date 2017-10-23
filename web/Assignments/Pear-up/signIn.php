@@ -55,7 +55,6 @@
 												</ul>
 												<?php
 													echo $name;
-													try {
 														$query = 'SELECT name FROM user_info WHERE name = ":name"';
 														echo 'preparing query';
 														$statement = $db->prepare($query);
@@ -64,11 +63,9 @@
 														echo 'exected.';
 														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 															$foundName = $row['name'];
-													} catch {
 														if (($foundName == NULL) && ($name != NULL)) {
 															echo '<strong style="color:red">Username not found.</strong>';
 														}
-													}
 													
 													if ($foundName != NULL) {
 														/* Redirect browser */
