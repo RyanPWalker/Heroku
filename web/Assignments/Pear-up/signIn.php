@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 	session_start();
 
 	// Temporary until I add a password hash
