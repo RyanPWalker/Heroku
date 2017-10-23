@@ -44,7 +44,7 @@
 													<li><input type="button" onclick="location.href='./createProfile.php'" value="Create Account" /></li>
 												</ul>
 												<?php
-
+													echo $name;
 													try {
 														//$query = 'SELECT name FROM user_info WHERE name = ":name"';
 														$query = "SELECT name FROM user_info WHERE name ='" . $name . "'";
@@ -59,6 +59,7 @@
 															echo '<strong style="color:red">Username not found.</strong>';
 														}
 													}
+													echo $foundName;
 													
 													if ($foundName != NULL) {
 														header("Location: ./index.php");
