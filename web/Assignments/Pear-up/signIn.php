@@ -4,8 +4,22 @@
 	// Temporary until I add a password hash
 	$_SESSION['online'] = true;
 
-	require("dbConnect.php");
-	$db = get_db();
+	$db = NULL;
+		try {
+			$dbUrl = getenv('DATABASE_URL');
+			$dbopts = parse_url($dbUrl);
+			$dbHost = $dbopts["host"];
+			$dbPort = $dbopts["port"];
+			$dbUser = $dbopts["user"];
+			$dbPassword = $dbopts["pass"];
+			$dbName = ltrim($dbopts["path"],'/');
+			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+		}
+		catch (PDOException $ex) {
+			echo "Error connecting to DB. Details: $ex";
+			die();
+		}
 
 	$name = $_POST[name];
 	$_SESSION['name'] = $name;
@@ -45,23 +59,25 @@
 												</ul>
 												<?php
 													echo $name;
-													$query = 'SELECT name FROM user_info WHERE name = "' . $name . '"';
-													echo 'preparing query';
-													$statement = $db->prepare($query);
-													//$statement->bindValue(':name', $name, PDO::PARAM_STR);
-													$statement->execute();
-													echo 'exected.';
-													while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-														$foundName = $row['name'];
+													try {
+														$query = 'SELECT name FROM user_info WHERE name = ":name"';
+														echo 'preparing query';
+														$statement = $db->prepare($query);
+														$statement->bindValue(':name', $name, PDO::PARAM_STR);
+														$statement->execute();
+														echo 'exected.';
+														while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+															$foundName = $row['name'];
+													} catch {
+														if (($foundName == NULL) && ($name != NULL)) {
+															echo '<strong style="color:red">Username not found.</strong>';
+														}
 													}
 													
 													if ($foundName != NULL) {
 														/* Redirect browser */
 														header("Location: ./index.php");
 														exit();
-													}
-													if (($foundName == NULL) && ($name != NULL)) {
-														echo '<strong style="color:red">Username not found.</strong>';
 													}
 												?>
 											</div>
