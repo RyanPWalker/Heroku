@@ -43,8 +43,9 @@
 								echo 'Inserting';
 							}
 							if ($_GET['task'] == 'update') {
-							$query = 'UPDATE user_info SET (name = :name, age = :age, city = :city, state = :state, email = :email, fact_one = :factone, fact_two = :facttwo, fact_three = :factthree) WHERE email = :email';
+							$query = 'UPDATE user_info SET name = :name, age = :age, city = :city, state = :state, email = :email, fact_one = :factone, fact_two = :facttwo, fact_three = :factthree WHERE email = :email';
 								echo 'Updating';
+								//UPDATE user_info SET city = 'Las Vegas', state = 'Nevada' WHERE name = 'ryan';
 							}
 							if ($_GET['task'] == 'delete') {
 								//Not sure I want to allow this feature yet until I have the password hash working.
