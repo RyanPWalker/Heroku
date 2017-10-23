@@ -30,6 +30,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+			h4 {
+				margin: 1em 0 0 0;
+			}
+		</style>
 	</head>
 	<body>
 
@@ -108,22 +113,22 @@
 									<h2>About Me</h2>
 									<ul class="alt">
 										<?php
-											echo '<h4 style="margin: 1 0 0 0;">Name</h4>';
+											echo '<h4>Name</h4>';
 											echo '<li>' . $_SESSION['name'] . '</li>';
 											echo '<h4>Age</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['age'] . '</li>';
+											echo '<li>' . $_SESSION['age'] . '</li>';
 											echo '<h4>Email</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['email'] . '</li>';
+											echo '<li>' . $_SESSION['email'] . '</li>';
 											echo '<h4>City</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['city'] . '</li>';
+											echo '<li>' . $_SESSION['city'] . '</li>';
 											echo '<h4>State</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['state'] . '</li>';
+											echo '<li>' . $_SESSION['state'] . '</li>';
 											echo '<h4>Fact One</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['factone'] . '</li>';
+											echo '<li>' . $_SESSION['factone'] . '</li>';
 											echo '<h4>Fact Two</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['facttwo'] . '</li>';
+											echo '<li>' . $_SESSION['facttwo'] . '</li>';
 											echo '<h4>Fact Three</h4>';
-											echo '<li style="margin: 1 0 0 0;">' . $_SESSION['factthree'] . '</li>';
+											echo '<li>' . $_SESSION['factthree'] . '</li>';
 										?>
 									</ul>
 								</div>
