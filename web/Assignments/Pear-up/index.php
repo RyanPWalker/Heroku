@@ -43,8 +43,8 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About Me</a></li>
-						<li><a href="#three">Find People</a></li>
+						<li><a href="#one" class="active">Find People</a></li>
+						<li><a href="#three">About Me</a></li>
 						<li><a href="#four">Contact</a></li>
 						<li><a href="./settings.php">Settings</a></li>
 					</ul>
@@ -75,27 +75,27 @@
 										<p>Just a flippin awesome website where you can meet cool peeps</p>
 									</header>
 									<h3>Meet new people (Feature Coming Soon- in development!)</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<p>Browse below to see people close to you within walking distance</p>
 									<div class="features">
 										<article>
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Jimbo Smith</h4>
+												<p>Hi I'm your new friend, come find me!</p>
 											</div>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Katy Perry</h4>
+												<p>Hi I'm your new friend, come find me!</p>
 											</div>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Justin Bieber</h4>
+												<p>Hi I'm your new friend, come find me!</p>
 											</div>
 										</article>
 									</div>

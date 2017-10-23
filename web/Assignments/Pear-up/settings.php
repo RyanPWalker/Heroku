@@ -42,7 +42,7 @@
 											<div class="6u 12u(xsmall)">
 													<div class="select-wrapper">
 														<select name="age" id="age">
-															<option value="0"><?php echo $_SESSION[''] ?></option>
+															<option value="0"><?php echo $_SESSION['age'] ?></option>
 															<?php
 																$count = 1;
 																for ($x = 0; $x < 100; $x++) {
