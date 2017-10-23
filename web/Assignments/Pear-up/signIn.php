@@ -10,11 +10,6 @@
 	$name = $_POST[name];
 	$_SESSION['name'] = $name;
 
-	$query = 'SELECT name FROM user_info WHERE name = :name';
-	$statement = $db->prepare($query);
-	$statement->bindValue(':name', $name, PDO::PARAM_STR);
-	$statement->execute();
-	$foundName = $statement->fetchAll(PDO::FETCH_ASSOC);
 	//if ($foundName['name'] != NULL) {
 		/* Redirect browser */
 		//header("Location: ./index.php");
