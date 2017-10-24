@@ -51,7 +51,7 @@
 							if ($_GET['task'] == 'delete') {
 								// Not sure I want to allow this feature yet until I have the password hash working.
 								// Till then, here is the code commented out.
-								//$query = 'DELETE FROM user_info WHERE name = ":name"';
+								//$query = 'DELETE FROM user_info WHERE name = :name';
 								echo 'Deleting';
 								session_unset();
 							}

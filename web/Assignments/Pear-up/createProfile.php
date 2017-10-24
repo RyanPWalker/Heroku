@@ -10,6 +10,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript">
+			function validateForm() {
+				x = document.getElementById('age').value;
+				if (isNaN(x) || x < 18) {
+        	alert('Must be 18 or older.');
+    		}
+			}
+		</script>
 	</head>
 	<body>
 
@@ -27,9 +35,9 @@
 										<h2>Create Pearfile</h2>
 										<p>Fill out the form to set up your <em>free</em> account today!</p>
 										<p>Must be 18 or older.</p>
-									<form method="post" action="./confirmation.php?task=insert">
+									<form method="post" action="./confirmation.php?task=insert" onsubmit="validateForm()">
 										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
+											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required autofocus /></div>
 											<div class="6u 12u(xsmall)">
 													<div class="select-wrapper">
 														<select name="age" id="age">
@@ -50,7 +58,7 @@
 											<div class="6u 12u(xsmall)"><input type="text" name="state" id="state" placeholder="State" /></div>
 										</div>
 										<div class="row uniform">
-											<div class="12u"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<div class="12u"><input type="email" name="email" id="email" placeholder="Email" required /></div>
 										</div>
 										<div class="row uniform">
 											<div class="12u"><input type="text" name="factone" id="factone" placeholder="Fun Fact One" /></div>
