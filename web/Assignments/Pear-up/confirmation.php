@@ -5,6 +5,8 @@
 
 	require("dbConnect.php");
 	$db = get_db();
+
+	$_SESSION['name'] = $_POST[name];
 ?>
 <!DOCTYPE HTML>
 <html>
