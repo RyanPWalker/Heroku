@@ -15,6 +15,8 @@
 				x = document.getElementById('age').value;
 				if (isNaN(x) || x < 18) {
         	alert('Must be 18 or older.');
+        	event.preventDefault();
+        	return false;
     		}
 			}
 		</script>
