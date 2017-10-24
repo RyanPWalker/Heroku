@@ -26,6 +26,7 @@
 									<header class="major">
 										<h2>Create Pearfile</h2>
 										<p>Fill out the form to set up your <em>free</em> account today!</p>
+										<p>Must be 18 or older.</p>
 									<form method="post" action="./confirmation.php?task=insert">
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
