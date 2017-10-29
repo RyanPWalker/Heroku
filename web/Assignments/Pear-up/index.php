@@ -7,6 +7,9 @@
 		exit();
 	}
 
+	$_SESSION['latitude'] = $_POST['latitude'];
+	$_SESSION['longitude'] = $_POST['longitude'];
+
 	require("dbConnect.php");
 	$db = get_db();
 
@@ -30,6 +33,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="./gps.js"></script>
 		<style type="text/css">
 			h4 {
 				margin: 1em 0 0 0;
@@ -87,6 +91,7 @@
 											<div class="inner">
 												<h4>Jimbo Smith</h4>
 												<p>Hi I'm your new friend, come find me!</p>
+												<p><?php echo $_SESSION['latitude'] . ' ' . $_SESSION['longitude']; ?></p>
 											</div>
 										</article>
 										<article>

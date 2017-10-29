@@ -17,6 +17,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="./gps.js"></script>
 	</head>
 	<body>
 
@@ -32,10 +33,16 @@
 								<div class="container">
 									<header class="major">
 										<h2>Sign In</h2>
+										<p>Please allow your browser to access your location.</p>
+										<p>Otherwise, this application will not work.</p>
 									<form method="post" action="./signIn.php">
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
 											<div class="6u 12u(xsmall)"><input type="text" name="password" id="password" placeholder="Password" /></div>
+											<div onload="getLocation()" hidden>
+												<input type="text" name="latitude" id="latitude" />
+												<input type="text" name="longitude" id="longitude" />
+											</div>
 										</div>
 										<div class="row uniform">
 											<div class="12u">
