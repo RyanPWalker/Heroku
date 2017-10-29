@@ -39,7 +39,7 @@
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" autofocus /></div>
 											<div class="6u 12u(xsmall)"><input type="text" name="password" id="password" placeholder="Password" /></div>
-											<div onload="getLocation()" hidden>
+											<div onload="getLocation()" >
 												<input type="text" name="latitude" id="latitude" />
 												<input type="text" name="longitude" id="longitude" />
 											</div>
